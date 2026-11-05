@@ -10,7 +10,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "generate-seo": "node scripts/generateSEOFiles.js"
+    "generate-seo": "node scripts/generateSEOFiles.js",
+    "build:study-data": "node scripts/buildCanonicalStudyData.js",
+    "validate:study-data": "node scripts/validateCanonicalStudyData.js",
+    "validate:study-content": "node scripts/validateStudyContent.js"
   },
   "keywords": [],
   "author": "",
