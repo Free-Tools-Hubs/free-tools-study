@@ -5,8 +5,16 @@ const TermsOfService = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-6 space-y-12">
       <Helmet>
-        <title>Terms of Service - StudyToolsHub</title>
-        <meta name="robots" content="noindex" />
+        <title>Terms of Service — StudyToolsHub</title>
+        <meta name="description" content="StudyToolsHub terms of service: Free, open-access educational study tools for students worldwide." />
+        <link rel="canonical" href="https://study.freetoolshubs.com/terms-of-service" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Terms of Service — StudyToolsHub" />
+        <meta property="og:description" content="Read our terms of service for using StudyToolsHub free study resources." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://study.freetoolshubs.com/terms-of-service" />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-main.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <div className="space-y-4 text-center">

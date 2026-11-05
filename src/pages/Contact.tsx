@@ -5,8 +5,16 @@ const Contact = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-6 space-y-16">
       <Helmet>
-        <title>Contact Us - StudyToolsHub</title>
-        <meta name="description" content="Have questions or feedback? Contact the StudyToolsHub team for support and partnership inquiries." />
+        <title>Contact Us — StudyToolsHub</title>
+        <meta name="description" content="Have questions or feedback? Contact the StudyToolsHub team for support, feature suggestions, and educational partnerships." />
+        <link rel="canonical" href="https://study.freetoolshubs.com/contact" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Contact Us — StudyToolsHub" />
+        <meta property="og:description" content="Reach out to the StudyToolsHub team for support and educational partnerships." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://study.freetoolshubs.com/contact" />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-main.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <section className="text-center space-y-4">

@@ -5,8 +5,16 @@ const About = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-6 space-y-16">
       <Helmet>
-        <title>About Us - StudyToolsHub</title>
-        <meta name="description" content="Learn about the mission behind StudyToolsHub - providing free, fast, and offline study tools for students worldwide." />
+        <title>About Us — StudyToolsHub</title>
+        <meta name="description" content="Learn about the mission behind StudyToolsHub — providing free, fast, and offline study tools for students worldwide." />
+        <link rel="canonical" href="https://study.freetoolshubs.com/about" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="About Us — StudyToolsHub" />
+        <meta property="og:description" content="Learn about our mission to provide free, fast, and offline study tools for students worldwide." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://study.freetoolshubs.com/about" />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-main.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <section className="text-center space-y-6">

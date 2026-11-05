@@ -22,6 +22,7 @@ const REPO_ROOT = path.resolve(__dirname, '..');
 const SOURCE_DATA_PATH = path.join(REPO_ROOT, 'src', 'data', 'studyTopics.json');
 const CANONICAL_OUT_PATH = path.join(REPO_ROOT, 'src', 'data', 'canonicalStudyTopics.json');
 const MANIFEST_OUT_PATH = path.join(REPO_ROOT, 'src', 'data', 'legacyTopicUrlManifest.json');
+const REDIRECT_MAP_OUT_PATH = path.join(REPO_ROOT, 'src', 'data', 'legacySlugRedirectMap.json');
 
 /**
  * Explicit deterministic URL-safe slug generator.
@@ -784,8 +785,29 @@ export function main() {
   fs.writeFileSync(CANONICAL_OUT_PATH, JSON.stringify(canonicalTopics, null, 2) + '\n', 'utf8');
   fs.writeFileSync(MANIFEST_OUT_PATH, JSON.stringify(manifestPayload, null, 2) + '\n', 'utf8');
 
+  // Generate lightweight client-side redirect lookup map (avoids bundling 5.2 MB manifest into client code)
+  const redirectMap = {};
+  for (const r of manifestRecords) {
+    if (r.disposition === 'redirect' && r.canonicalSlug) {
+      redirectMap[r.legacySlug] = r.canonicalSlug;
+    } else if (r.reviewStatus === 'recovered_canonical_content_ready_for_routing_migration' && r.canonicalSlug) {
+      redirectMap[r.legacySlug] = r.canonicalSlug;
+      const normalizedLegacy = r.legacySlug.replace(/\s+/g, '-');
+      redirectMap[normalizedLegacy] = r.canonicalSlug;
+    }
+  }
+  for (const nav of nonDatasetNavSlugs) {
+    if (nav.canonicalSlug) {
+      redirectMap[nav.legacySlug] = nav.canonicalSlug;
+    }
+  }
+  redirectMap['psychology-intro'] = 'psychology-cognitive-psychology';
+
+  fs.writeFileSync(REDIRECT_MAP_OUT_PATH, JSON.stringify(redirectMap, null, 2) + '\n', 'utf8');
+
   const canonicalBytes = fs.statSync(CANONICAL_OUT_PATH).size;
   const manifestBytes = fs.statSync(MANIFEST_OUT_PATH).size;
+  const redirectMapBytes = fs.statSync(REDIRECT_MAP_OUT_PATH).size;
 
   console.log('\n=== PHASE 2B GENERATION COMPLETE ===');
   console.log(`Canonical topics written: ${canonicalTopics.length} -> ${CANONICAL_OUT_PATH} (${canonicalBytes.toLocaleString()} bytes)`);
@@ -801,6 +823,7 @@ export function main() {
   console.log(`  - newly authored educational flashcards added: ${totalRemediatedCardsAdded}`);
   console.log(`  - newly authored educational quiz questions added: ${totalRemediatedQuestionsAdded}`);
   console.log(`Legacy URL manifest written: ${manifestRecords.length} dataset records (${manifestRecords.length * 2} URLs) + ${nonDatasetNavSlugs.length} nav slugs -> ${MANIFEST_OUT_PATH} (${manifestBytes.toLocaleString()} bytes)`);
+  console.log(`Lightweight client redirect map written: ${Object.keys(redirectMap).length} keys -> ${REDIRECT_MAP_OUT_PATH} (${redirectMapBytes.toLocaleString()} bytes)`);
   console.log('  - Dataset Record Dispositions:', dispositionCounts);
 }
 

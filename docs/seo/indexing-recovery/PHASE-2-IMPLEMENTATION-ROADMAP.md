@@ -68,6 +68,24 @@ Verify external GSC/Cloudflare configurations, locate/align the production deplo
 > - **Expanded 21 Priority Canonical Topics:** All 21 priority topics now have 8–10 flashcards (198 total) and 5–6 quiz questions (116 total) with unique descriptions, learning objectives, and verification bases.
 > - **Multi-Dimensional Quality Statuses:** Verified across 5 dimensions: **17 `verified`**, **4 `needs_review`** (documented review concepts for Macroeconomics, Microeconomics, Modernism, Social Psychology), and **44 `insufficient`** (placeholder fallback topics strictly excluded from indexability).
 > - **Validated Gates:** Verified via `scripts/validateStudyContent.js` (`npm run validate:study-content`, exit code `0`) and `tsc --noEmit` (exit code `0`). Canonical dataset size: **650,440 bytes (650.44 KB)** (SHA-256: `7a7f50a54d7587eb`). Manifest URL coverage remains 100% complete and unchanged.
+>
+> **Phase 2C Status Update (Completed 2026-11-05):**  
+> - **Canonical Data Access Layer (`src/services/studyDataService.ts`):** Centralized, strictly typed data-access layer implemented. Zero direct imports of `studyTopics.json` remain anywhere in `src/`.
+> - **Soft-404 Elimination:** Removed `|| (studyData as any[])[0]` across all pages. Invalid or unknown topic requests render an explicit `<TopicNotFound />` component with `<meta name="robots" content="noindex, nofollow" />`.
+> - **Client Bundle Protection:** 5.2 MB `legacyTopicUrlManifest.json` is 0% bundled into client code. Generated lightweight `src/data/legacySlugRedirectMap.json` (97 KB) for O(1) in-browser self-healing redirects.
+> - **Lossless Progress Migration (`src/utils/progressMigration.ts`):** Implemented idempotent migration running on startup to remap legacy slug keys to canonical slugs and merge decks while preserving highest confidence and latest review timestamps.
+> - **Bundle Optimization:** Total emitted client JS dropped from **30,030.85 kB (~30.03 MB)** to **1,004.65 kB (~1.00 MB)** (**96.65% reduction**). Emitted `study-data` chunk dropped from **29,677.21 kB (~29.68 MB)** to **634.46 kB** (**97.86% reduction**; gzip: 93.42 kB).
+> - **Validated Gates:** Verified via `scripts/validateConsumerCutover.js` (`npm run validate:cutover`, exit code `0`), `scripts/validateStudyContent.js` (exit code `0`), `scripts/validateCanonicalStudyData.js` (exit code `0`), `tsc --noEmit` (exit code `0`), and production `vite build` (exit code `0`). Zero legacy data in client build.
+>
+> **Phase 2D Status Update (Completed 2026-11-05):**  
+> - **Forensic URL Reconciliation:** Audited and reconciled all 10,008 source paths across manifest records and navigation URLs. Exactly 0 duplicate source paths and 0 conflicting mappings.
+> - **Deterministic Netlify Redirect Generator (`scripts/generateNetlifyRedirects.js`):** Built-in generator outputs `public/_redirects` (8,657 lines, 527.66 KB).
+> - **HTTP 301 Permanent Redirects:** Generated exactly **2,808 rules** (1,404 Flashcard + 1,404 Quiz) mapping genuine level variants to canonical destinations. 0 self-redirects, 0 loops, 0 chains.
+> - **HTTP 410 Gone Responses:** Generated exactly **5,712 rules** (2,856 Flashcard + 2,856 Quiz) for confirmed permanently retired synthetic cycle repeats and invalid level pairings.
+> - **Manual-Review Exclusions:** Verified 100% exclusion for all 1,482 manual-review URLs (0 automatic 301/410 rules generated).
+> - **Soft-404 Elimination at Edge:** Replaced blanket `/* /index.html 200` with 136 explicit canonical 200 rewrite rules + deliberate `/* /404.html 404` final fallback. Removed blanket rewrite from `netlify.toml`.
+> - **Static Error Pages:** Created standalone `public/404.html` and `public/410.html`.
+> - **Validated Gates:** Verified via `scripts/validateNetlifyRedirects.js` (`npm run validate:redirects`, exit code `0`) across 10 validation gates and 15 simulated HTTP routing scenarios. Production build succeeds cleanly.
 
 ### Objective
 Switch the application from the legacy 37.81 MB `src/data/studyTopics.json` to the validated 385.66 KB `src/data/canonicalStudyTopics.json` via a clean adapter/migration layer (Phase 2B), resolve the orphaned Computer Science seed content and editorial quiz issues, and enforce strict indexability gating based on `contentQuality.status`.
@@ -191,57 +209,43 @@ Ensure every route has complete, accurate metadata and canonical tags, make all 
 
 ---
 
-## Phase 2.5 — Vite Build-Time Static Prerendering (SSG) & Automated Sitemap Pipeline (Workstreams 3 & 7)
+## Phase 2E — Static HTML Prerendering, Canonical SEO & Sitemap Generation (COMPLETED)
 
 ### Objective
-Eliminate the empty `<div id="root"></div>` shell by pre-rendering static HTML files for every valid route at build time, serving genuine HTTP 404 via `dist/404.html`, and generating a clean, validated `dist/sitemap.xml` automatically during `npm run build`.
+Eliminate the client-only SPA discoverability bottleneck by pre-rendering eligible educational pages into crawlable static HTML, establishing canonical topic URL policies, embedding complete structured metadata (Schema.org JSON-LD), and generating a strict, 23-URL production sitemap.
 
-### Files & Systems Affected
-- `scripts/prerender.js` *(new build-time prerender script using React `renderToString` + `HelmetServerState`)*
-- `scripts/generateSEOFiles.js`
-- `package.json`
-- `public/_redirects`
-- `netlify.toml`
-
-### Dependencies
-- Phase 2.2, 2.3, and 2.4.
-
-### Implementation Tasks
-1. **Build-Time Static Prerendering (`RC-02`):**
-   - Create a Vite SSR/prerender entry (`src/entry-prerender.tsx`) using `react-dom/server`'s `renderToString`, `StaticRouter`, and `HelmetProvider` context.
-   - During `npm run build`, iterate over all valid routes:
-     - Static pages: `/`, `/study-timetable-template`, `/about`, `/contact`, `/privacy-policy`, `/terms-of-service`
-     - Subject Hubs: all 9 `/subjects/:subjectSlug` routes
-     - Topic pages: all `/:slug` and `/quiz/:slug` routes
-     - 404 page: `/404` → written to `dist/404.html`
-   - Inject the rendered `<head>` tags (`<title>`, `<meta name="description">`, `<link rel="canonical">`, `<meta name="robots">`, OpenGraph, JSON-LD) and `<div id="root">${appHtml}</div>` into each route's `dist/<route>/index.html` (stripping the generic homepage `<title>` and `<meta name="description">` so there are never duplicate tags).
-2. **True HTTP 404 on Netlify (`RC-05`):**
-   - Remove `/* /index.html 200` from `public/_redirects` and `netlify.toml`.
-   - Because every valid route now has a physical `dist/<route>/index.html` file, Netlify serves HTTP 200 for all valid routes and automatically serves `dist/404.html` with **HTTP 404 Not Found** for any invalid URL!
-   - Add `301` redirect rules in `public/_redirects` for legacy URLs (such as `/psychology-intro /psychology-cognitive-psychology 301` and legacy level slugs).
-3. **Automated, Policy-Compliant Sitemap Generation (`RC-08`, `RC-11`):**
-   - Update `scripts/generateSEOFiles.js` to include **only** indexable routes (`isIndexable === true`):
-     - 4 indexable static routes (`/`, `/study-timetable-template`, `/about`, `/contact`) — explicitly excluding `/privacy-policy` and `/terms-of-service`.
-     - 9 Subject Hub routes (`/subjects/:subjectSlug`).
-     - All Tier 1 (`isIndexable: true`) Flashcard (`/:slug`) and Quiz (`/quiz/:slug`) routes.
-   - Include accurate `<lastmod>` dates (YYYY-MM-DD) and validate that every `<loc>` is a valid RFC 3986 URI with zero whitespace.
-   - Update `package.json`: `"build": "node scripts/generateSEOFiles.js && tsc && vite build && node scripts/prerender.js"`.
-
-### Risks & Rollback
-- **Risk:** `window` or `localStorage` references executing during Node `renderToString` prerendering.
-- **Mitigation:** Ensure all `localStorage` / `IndexedDB` / `window` calls in `useStore.ts` and components are guarded by `typeof window !== 'undefined'` or inside `useEffect` hooks.
-
-### Acceptance Criteria & Verification
-- **Static HTML Gate:** Inspect `dist/biology-cell-biology/index.html` and `dist/404.html` on disk without executing JS:
-  - Contains unique `<title>`, `<meta name="description">`, `<link rel="canonical" href="https://study.freetoolshubs.com/biology-cell-biology" />`, JSON-LD, `<h1>Cell Biology Flashcards</h1>`, all ≥15 flashcards, and internal `<a href>` links.
-- **Sitemap Gate:** `dist/sitemap.xml` contains 0 URLs with spaces, 0 `noindex` URLs, and 100% of `<loc>` URLs correspond to a pre-rendered `dist/<route>/index.html` file.
+### Deliverables & Implementation Status
+1. **Static HTML Prerendering Engine (`scripts/prerenderStaticPages.js`):** **COMPLETED**.
+   - Built-time SSR engine compiles `src/entry-server.tsx` using Vite SSR.
+   - Pre-renders all 136 routes (1 root, 5 static, 65 canonical flashcard topics, 65 quiz routes) in 1.61s.
+   - Total HTML output: 3.09 MB.
+   - Emits Netlify-compatible file structure (`dist/${route}/index.html` and `dist/${route}.html`).
+2. **Deterministic Sitemap Generator (`scripts/generateSitemap.js`):** **COMPLETED**.
+   - Produces `public/sitemap.xml` and `dist/sitemap.xml` containing exactly 23 approved canonical URLs.
+   - 0 redirecting URLs, 0 obsolete URLs, 0 noindex URLs, 0 quiz URLs, 0 unverified topics.
+3. **Robots Directives & Indexing Gate:** **COMPLETED**.
+   - Exactly 17 verified topics carry `<meta name="robots" content="index, follow" />`.
+   - All 4 `needs_review` and 44 `insufficient` topics carry `<meta name="robots" content="noindex, follow" />`.
+   - All 65 quiz routes carry `<meta name="robots" content="noindex, follow" />` and canonicalize to primary topic (`/${slug}`).
+4. **Structured Data (Schema.org JSON-LD):** **COMPLETED**.
+   - Valid `WebSite` schema on homepage.
+   - Valid `BreadcrumbList`, `LearningResource`, and `FAQPage` schemas on verified topics.
+   - 0 fabricated review ratings, 0 fake star counts, 0 artificial author personas.
+5. **Automated Validation Suite (`scripts/validatePrerenderedSEO.js`):** **COMPLETED**.
+   - 28 / 28 automated quality gates passing with Exit Code 0.
+   - Full documentation recorded in `docs/seo/indexing-recovery/PHASE-2E-*.md`.
 
 ---
 
-## Phase 2.6 — Independent Pre-Deploy & Post-Deploy Production Validation (Workstream 9)
+## Phase 2F — Build Verification, Deployment Packaging & Production Rollout (NEXT PHASE)
 
 ### Objective
-Independently verify source build artifacts, local preview HTTP responses, and live production responses after deployment to the production deployment repository.
+Independently verify source build artifacts, local preview HTTP responses, and prepare deployment packaging for the separate production deployment repository.
+
+### Release Gates & Prerequisites
+- Full production build sequence (`npm run build`) passing deterministically.
+- All 80 automated quality gates passing across Phases 2A, 2B, 2C, 2D, and 2E.
+- Prepare production deployment branch / artifacts for zero-downtime deployment.
 
 ### Validation Checklist & Release Gates
 

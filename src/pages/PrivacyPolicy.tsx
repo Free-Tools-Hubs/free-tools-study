@@ -5,8 +5,16 @@ const PrivacyPolicy = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-6 space-y-12">
       <Helmet>
-        <title>Privacy Policy - StudyToolsHub</title>
-        <meta name="robots" content="noindex" />
+        <title>Privacy Policy — StudyToolsHub</title>
+        <meta name="description" content="StudyToolsHub privacy policy: We operate a 100% client-side application. No personal data collection or tracking of student notes." />
+        <link rel="canonical" href="https://study.freetoolshubs.com/privacy-policy" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Privacy Policy — StudyToolsHub" />
+        <meta property="og:description" content="Learn about StudyToolsHub client-side data privacy policies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://study.freetoolshubs.com/privacy-policy" />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-main.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <div className="space-y-4 text-center">

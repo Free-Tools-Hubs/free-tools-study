@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Calendar as CalendarIcon, Clock, Plus, Download, Save, Trash2, Layout, ChevronRight } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { createStudyPlan, StudySlot } from '../modules/studyEngine';
 import AdSlot from '../components/AdSlot';
-import studyData from '../data/studyTopics.json';
+import { studyDataService } from '../services/studyDataService';
 
 const Planner = () => {
   const { examType } = useParams();
@@ -85,8 +86,26 @@ const Planner = () => {
     }
   };
 
+  const isMainTemplate = !examType;
+
   return (
     <div className="py-8 space-y-8 max-w-[1400px] mx-auto">
+      <Helmet>
+        <title>{isMainTemplate ? 'Free Study Timetable Template & Weekly Planner | StudyToolsHub' : `${title} — Timetable Template | StudyToolsHub`}</title>
+        <meta
+          name="description"
+          content="Create an optimized weekly study timetable in seconds. Custom hourly schedule generator using evidence-based spaced repetition principles."
+        />
+        <link rel="canonical" href="https://study.freetoolshubs.com/study-timetable-template" />
+        <meta name="robots" content={isMainTemplate ? "index, follow" : "noindex, follow"} />
+        <meta property="og:title" content="Free Study Timetable Template & Weekly Planner" />
+        <meta property="og:description" content="Generate an optimized study schedule using spaced repetition and interleaving principles." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://study.freetoolshubs.com/study-timetable-template" />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-planner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <header className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-border pb-8">
         <div className="space-y-4">
           <div className="flex items-center gap-2 text-amber-600 font-semibold">
@@ -125,7 +144,8 @@ const Planner = () => {
 
       {/* Template Suggestions Alignment */}
       {(() => {
-        const topicMatch = (studyData as any[]).find(t => t.slug === examType);
+        const resolution = studyDataService.resolveTopic(examType);
+        const topicMatch = resolution.topic;
         if (topicMatch && topicMatch.plannerTemplates) {
           return (
             <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
@@ -133,7 +153,7 @@ const Planner = () => {
                 <Layout className="w-4 h-4" /> Recommended Plans for {topicMatch.subTopic}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {topicMatch.plannerTemplates.map((template: any, idx: number) => (
+                {topicMatch.plannerTemplates.map((template, idx: number) => (
                   <button 
                     key={idx}
                     onClick={() => {
