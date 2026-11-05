@@ -1,0 +1,1433 @@
+{
+  "generatedAt": "2026-11-05T18:13:39.792Z",
+  "totalFiles": 285,
+  "totalSizeBytes": 8677256,
+  "totalSizeMB": "8.28",
+  "files": [
+    {
+      "path": "404.html",
+      "sizeBytes": 3635,
+      "sha256": "7fc7ebe8acef0c9fa50a89769e8166f9d2c553b01df1ead815dbbfb3823f2bc6"
+    },
+    {
+      "path": "410.html",
+      "sizeBytes": 4219,
+      "sha256": "6771e48e77a51c55e13278926f584d955b2a8cb75ff5353e3651a8cb410b5903"
+    },
+    {
+      "path": "_headers",
+      "sizeBytes": 122,
+      "sha256": "5056a07110976ef0c81eb22f20640634bc88353b6fc26d58110db768844098ce"
+    },
+    {
+      "path": "_redirects",
+      "sizeBytes": 527662,
+      "sha256": "0714b9644321276963cb0abe1a123c114707aaa808e03e9076b5e75aefb6193a"
+    },
+    {
+      "path": "about.html",
+      "sizeBytes": 10339,
+      "sha256": "347a0fd8567394c4cf840090bcd8cd94a9972916d8a351212487c53844bd4617"
+    },
+    {
+      "path": "about/index.html",
+      "sizeBytes": 10339,
+      "sha256": "347a0fd8567394c4cf840090bcd8cd94a9972916d8a351212487c53844bd4617"
+    },
+    {
+      "path": "assets/index-BoUZrn2k.js",
+      "sizeBytes": 90674,
+      "sha256": "db850aa82aa6d10f9ccf9ed5bbd0942c37654745af6e0fbb89057484c8442ff1"
+    },
+    {
+      "path": "assets/index-Dxpp6PKE.css",
+      "sizeBytes": 29135,
+      "sha256": "33ef33c0d33e619598cb21001bcb76c2c415ef3b48539621ac6cac70f1cabc6a"
+    },
+    {
+      "path": "assets/rolldown-runtime-WkwZ5CU-.js",
+      "sizeBytes": 599,
+      "sha256": "2629f2ad3cb75a57d98de697127f5af7d777ef572bbcdfa6e3ce8f438cd4527e"
+    },
+    {
+      "path": "assets/study-data-DadxopSG.js",
+      "sizeBytes": 634461,
+      "sha256": "0f76d6e3be64b69add35160ca006dcfb80d4e501e7a23152ea748b36e0882182"
+    },
+    {
+      "path": "assets/vendor-DPkodN_t.js",
+      "sizeBytes": 286383,
+      "sha256": "1a1d1ca6d6238fc29fe6385531cd73bf9d7b42bf08fe0bd708c744dd4031c5b3"
+    },
+    {
+      "path": "biology-biochemistry.html",
+      "sizeBytes": 28019,
+      "sha256": "fcae320ebde4cfca0fe6add3f9c5cdc863bba85cbd6d915124c869282a46a75c"
+    },
+    {
+      "path": "biology-biochemistry/index.html",
+      "sizeBytes": 28019,
+      "sha256": "fcae320ebde4cfca0fe6add3f9c5cdc863bba85cbd6d915124c869282a46a75c"
+    },
+    {
+      "path": "biology-botany.html",
+      "sizeBytes": 27946,
+      "sha256": "a185a35dd4ff4abde3ae6f87821cb4edcdc9fab3ea0e05bfb600ef091265aacb"
+    },
+    {
+      "path": "biology-botany/index.html",
+      "sizeBytes": 27946,
+      "sha256": "a185a35dd4ff4abde3ae6f87821cb4edcdc9fab3ea0e05bfb600ef091265aacb"
+    },
+    {
+      "path": "biology-cell-biology.html",
+      "sizeBytes": 32560,
+      "sha256": "bdf972fadaca92e04c2d7c1660f3c0fd17bed826544b93479aae9676c542a277"
+    },
+    {
+      "path": "biology-cell-biology/index.html",
+      "sizeBytes": 32560,
+      "sha256": "bdf972fadaca92e04c2d7c1660f3c0fd17bed826544b93479aae9676c542a277"
+    },
+    {
+      "path": "biology-ecology.html",
+      "sizeBytes": 28001,
+      "sha256": "c124efc10463bef7a301a62680dc4be849c73addd0bb643a0fc85e851880cc98"
+    },
+    {
+      "path": "biology-ecology/index.html",
+      "sizeBytes": 28001,
+      "sha256": "c124efc10463bef7a301a62680dc4be849c73addd0bb643a0fc85e851880cc98"
+    },
+    {
+      "path": "biology-evolution.html",
+      "sizeBytes": 32796,
+      "sha256": "fedba0623c69daf1d833b59430707d3f81131f44d5dd681b686234df68114463"
+    },
+    {
+      "path": "biology-evolution/index.html",
+      "sizeBytes": 32796,
+      "sha256": "fedba0623c69daf1d833b59430707d3f81131f44d5dd681b686234df68114463"
+    },
+    {
+      "path": "biology-genetics.html",
+      "sizeBytes": 32833,
+      "sha256": "c123dc4859ed85338a4029c4ca3c19efb4d4d29037c0fd633b9b099931c60c24"
+    },
+    {
+      "path": "biology-genetics/index.html",
+      "sizeBytes": 32833,
+      "sha256": "c123dc4859ed85338a4029c4ca3c19efb4d4d29037c0fd633b9b099931c60c24"
+    },
+    {
+      "path": "biology-human-anatomy.html",
+      "sizeBytes": 28286,
+      "sha256": "0b3134dfc6b38178514e56c388e3e1ab13c7e8522d295f4ad2aed47b38977c31"
+    },
+    {
+      "path": "biology-human-anatomy/index.html",
+      "sizeBytes": 28286,
+      "sha256": "0b3134dfc6b38178514e56c388e3e1ab13c7e8522d295f4ad2aed47b38977c31"
+    },
+    {
+      "path": "biology-marine-biology.html",
+      "sizeBytes": 28268,
+      "sha256": "2caccf23198eb12038101f786ca601d87c514b0a5d3d9dddc8e60db650498fcd"
+    },
+    {
+      "path": "biology-marine-biology/index.html",
+      "sizeBytes": 28268,
+      "sha256": "2caccf23198eb12038101f786ca601d87c514b0a5d3d9dddc8e60db650498fcd"
+    },
+    {
+      "path": "biology-microbiology.html",
+      "sizeBytes": 28223,
+      "sha256": "77aebeee4c81a78450e37dbf315e7bee0f429588d4de0263fd8a6f581f2fc5e9"
+    },
+    {
+      "path": "biology-microbiology/index.html",
+      "sizeBytes": 28223,
+      "sha256": "77aebeee4c81a78450e37dbf315e7bee0f429588d4de0263fd8a6f581f2fc5e9"
+    },
+    {
+      "path": "biology-zoology.html",
+      "sizeBytes": 28136,
+      "sha256": "9e8784ea83b7713fb8b9478ad5120d63230935d6a1c14b236bd313c7ec412e3b"
+    },
+    {
+      "path": "biology-zoology/index.html",
+      "sizeBytes": 28136,
+      "sha256": "9e8784ea83b7713fb8b9478ad5120d63230935d6a1c14b236bd313c7ec412e3b"
+    },
+    {
+      "path": "chemistry-acids-and-bases.html",
+      "sizeBytes": 28352,
+      "sha256": "5b4fc02d19d1b726959d5af889d06f3333cc305c25e71233091520d64353c95d"
+    },
+    {
+      "path": "chemistry-acids-and-bases/index.html",
+      "sizeBytes": 28352,
+      "sha256": "5b4fc02d19d1b726959d5af889d06f3333cc305c25e71233091520d64353c95d"
+    },
+    {
+      "path": "chemistry-analytical-chemistry.html",
+      "sizeBytes": 28513,
+      "sha256": "39a9340bd3b0eb01ddf5b00507fbc78048b332e3a376aca52829d0216a94088c"
+    },
+    {
+      "path": "chemistry-analytical-chemistry/index.html",
+      "sizeBytes": 28513,
+      "sha256": "39a9340bd3b0eb01ddf5b00507fbc78048b332e3a376aca52829d0216a94088c"
+    },
+    {
+      "path": "chemistry-chemical-bonding.html",
+      "sizeBytes": 28386,
+      "sha256": "1a36363995a83e0678d7efbbf46666e9af30189b1ee2e05bce3ff7b3e39dd15b"
+    },
+    {
+      "path": "chemistry-chemical-bonding/index.html",
+      "sizeBytes": 28386,
+      "sha256": "1a36363995a83e0678d7efbbf46666e9af30189b1ee2e05bce3ff7b3e39dd15b"
+    },
+    {
+      "path": "chemistry-inorganic-chemistry.html",
+      "sizeBytes": 28529,
+      "sha256": "e3626530aef2f19f392e69bef5d915d107443103c638800707b464d0f6e9299e"
+    },
+    {
+      "path": "chemistry-inorganic-chemistry/index.html",
+      "sizeBytes": 28529,
+      "sha256": "e3626530aef2f19f392e69bef5d915d107443103c638800707b464d0f6e9299e"
+    },
+    {
+      "path": "chemistry-organic-chemistry.html",
+      "sizeBytes": 32908,
+      "sha256": "d54656e8c163c93dae6d31ce1c758da6cf07c6243fcc595572d8e03ca1385895"
+    },
+    {
+      "path": "chemistry-organic-chemistry/index.html",
+      "sizeBytes": 32908,
+      "sha256": "d54656e8c163c93dae6d31ce1c758da6cf07c6243fcc595572d8e03ca1385895"
+    },
+    {
+      "path": "chemistry-periodic-table.html",
+      "sizeBytes": 32982,
+      "sha256": "f4073e6f831dd184cf2a51f4456849d22aaa26c72b16575e16e045ffd3e7ada3"
+    },
+    {
+      "path": "chemistry-periodic-table/index.html",
+      "sizeBytes": 32982,
+      "sha256": "f4073e6f831dd184cf2a51f4456849d22aaa26c72b16575e16e045ffd3e7ada3"
+    },
+    {
+      "path": "chemistry-physical-chemistry.html",
+      "sizeBytes": 28294,
+      "sha256": "82fe1af01ea7fbd52d99becdee2e97df7c492be8c5dcb0ef063fafbbbb0602b8"
+    },
+    {
+      "path": "chemistry-physical-chemistry/index.html",
+      "sizeBytes": 28294,
+      "sha256": "82fe1af01ea7fbd52d99becdee2e97df7c492be8c5dcb0ef063fafbbbb0602b8"
+    },
+    {
+      "path": "chemistry-thermodynamics.html",
+      "sizeBytes": 28170,
+      "sha256": "54641b7b27e2157048d8e052794b6d2c336150a1a43845f5df892eeab0397374"
+    },
+    {
+      "path": "chemistry-thermodynamics/index.html",
+      "sizeBytes": 28170,
+      "sha256": "54641b7b27e2157048d8e052794b6d2c336150a1a43845f5df892eeab0397374"
+    },
+    {
+      "path": "computer-science-algorithms.html",
+      "sizeBytes": 33820,
+      "sha256": "9c7947c71e70f5cd9935b7ac217c4248b66f5fe805748047de59077cad6b747e"
+    },
+    {
+      "path": "computer-science-algorithms/index.html",
+      "sizeBytes": 33820,
+      "sha256": "9c7947c71e70f5cd9935b7ac217c4248b66f5fe805748047de59077cad6b747e"
+    },
+    {
+      "path": "computer-science-cloud-computing.html",
+      "sizeBytes": 27901,
+      "sha256": "813c5c1ce47c78904df1f8694d13602932834eb5c11e258c43d2b93af93a084a"
+    },
+    {
+      "path": "computer-science-cloud-computing/index.html",
+      "sizeBytes": 27901,
+      "sha256": "813c5c1ce47c78904df1f8694d13602932834eb5c11e258c43d2b93af93a084a"
+    },
+    {
+      "path": "computer-science-cybersecurity.html",
+      "sizeBytes": 28136,
+      "sha256": "786291095f44eb6ae110c4ec3da39abf6be891a3ab7adaaa57f2c8b4eecf7b1b"
+    },
+    {
+      "path": "computer-science-cybersecurity/index.html",
+      "sizeBytes": 28136,
+      "sha256": "786291095f44eb6ae110c4ec3da39abf6be891a3ab7adaaa57f2c8b4eecf7b1b"
+    },
+    {
+      "path": "computer-science-data-structures.html",
+      "sizeBytes": 34069,
+      "sha256": "1e9b85ecea582fd35a9376104f81b141cf7b1a8f471967827f27ba65b21631b0"
+    },
+    {
+      "path": "computer-science-data-structures/index.html",
+      "sizeBytes": 34069,
+      "sha256": "1e9b85ecea582fd35a9376104f81b141cf7b1a8f471967827f27ba65b21631b0"
+    },
+    {
+      "path": "computer-science-database-systems.html",
+      "sizeBytes": 28236,
+      "sha256": "a5b1863f11906f644e5e30483143c6a6c55257110e9da71163074c1ab9077d6f"
+    },
+    {
+      "path": "computer-science-database-systems/index.html",
+      "sizeBytes": 28236,
+      "sha256": "a5b1863f11906f644e5e30483143c6a6c55257110e9da71163074c1ab9077d6f"
+    },
+    {
+      "path": "computer-science-machine-learning.html",
+      "sizeBytes": 32981,
+      "sha256": "dbbe2fd9bdc70410579cc9f4db46413a76501f58347f39988afc50b03f8a36d4"
+    },
+    {
+      "path": "computer-science-machine-learning/index.html",
+      "sizeBytes": 32981,
+      "sha256": "dbbe2fd9bdc70410579cc9f4db46413a76501f58347f39988afc50b03f8a36d4"
+    },
+    {
+      "path": "computer-science-operating-systems.html",
+      "sizeBytes": 27850,
+      "sha256": "52de301670d5622101d1db539a8339348f47a1ab26dd183649944901992a973b"
+    },
+    {
+      "path": "computer-science-operating-systems/index.html",
+      "sizeBytes": 27850,
+      "sha256": "52de301670d5622101d1db539a8339348f47a1ab26dd183649944901992a973b"
+    },
+    {
+      "path": "computer-science-web-development.html",
+      "sizeBytes": 28407,
+      "sha256": "60dbaba1c1d4b637a20c8f1969752843228a178fc8a91e081359a52c77597b6e"
+    },
+    {
+      "path": "computer-science-web-development/index.html",
+      "sizeBytes": 28407,
+      "sha256": "60dbaba1c1d4b637a20c8f1969752843228a178fc8a91e081359a52c77597b6e"
+    },
+    {
+      "path": "contact.html",
+      "sizeBytes": 10943,
+      "sha256": "e8ce4f9ae171df13856b9a5c84c6213c13d011d770e1d80ff146529fd4fd89df"
+    },
+    {
+      "path": "contact/index.html",
+      "sizeBytes": 10943,
+      "sha256": "e8ce4f9ae171df13856b9a5c84c6213c13d011d770e1d80ff146529fd4fd89df"
+    },
+    {
+      "path": "economics-econometrics.html",
+      "sizeBytes": 27568,
+      "sha256": "6b0d34c63f2af27e64419943e8cf2459a0eea82b20bbef1d50d0a9a49c793ee1"
+    },
+    {
+      "path": "economics-econometrics/index.html",
+      "sizeBytes": 27568,
+      "sha256": "6b0d34c63f2af27e64419943e8cf2459a0eea82b20bbef1d50d0a9a49c793ee1"
+    },
+    {
+      "path": "economics-game-theory.html",
+      "sizeBytes": 27920,
+      "sha256": "ac6e6828a3c172031152b02bd4dcb56f5eedbeb60ddf3de83a93807deefbf8a3"
+    },
+    {
+      "path": "economics-game-theory/index.html",
+      "sizeBytes": 27920,
+      "sha256": "ac6e6828a3c172031152b02bd4dcb56f5eedbeb60ddf3de83a93807deefbf8a3"
+    },
+    {
+      "path": "economics-international-trade.html",
+      "sizeBytes": 28258,
+      "sha256": "8a3cb3f4c422beddf5220355ed781fd759ab61e2d6b5afecd9a1c57f2ddd70cd"
+    },
+    {
+      "path": "economics-international-trade/index.html",
+      "sizeBytes": 28258,
+      "sha256": "8a3cb3f4c422beddf5220355ed781fd759ab61e2d6b5afecd9a1c57f2ddd70cd"
+    },
+    {
+      "path": "economics-macroeconomics.html",
+      "sizeBytes": 33683,
+      "sha256": "05f493bbc00021aaefe8c2c63a06a7f1abed6743d79034c14f856baf5fc8ed57"
+    },
+    {
+      "path": "economics-macroeconomics/index.html",
+      "sizeBytes": 33683,
+      "sha256": "05f493bbc00021aaefe8c2c63a06a7f1abed6743d79034c14f856baf5fc8ed57"
+    },
+    {
+      "path": "economics-microeconomics.html",
+      "sizeBytes": 33876,
+      "sha256": "64fc08611c2ad037bc09e6195c8bfb24f26a1d3855ac3908f0e0c0bea5a09f64"
+    },
+    {
+      "path": "economics-microeconomics/index.html",
+      "sizeBytes": 33876,
+      "sha256": "64fc08611c2ad037bc09e6195c8bfb24f26a1d3855ac3908f0e0c0bea5a09f64"
+    },
+    {
+      "path": "history-american-civil-war.html",
+      "sizeBytes": 28258,
+      "sha256": "5cc1e6f63ebf14d4375cd2a88fefebd5500f7c5f5626196f71642f399797551b"
+    },
+    {
+      "path": "history-american-civil-war/index.html",
+      "sizeBytes": 28258,
+      "sha256": "5cc1e6f63ebf14d4375cd2a88fefebd5500f7c5f5626196f71642f399797551b"
+    },
+    {
+      "path": "history-ancient-egypt.html",
+      "sizeBytes": 34057,
+      "sha256": "a898ca1e3d77569e1ff4867c1e408590a2053249e6821a3e470864f4ab475550"
+    },
+    {
+      "path": "history-ancient-egypt/index.html",
+      "sizeBytes": 34057,
+      "sha256": "a898ca1e3d77569e1ff4867c1e408590a2053249e6821a3e470864f4ab475550"
+    },
+    {
+      "path": "history-cold-war.html",
+      "sizeBytes": 27886,
+      "sha256": "2d83ef78509416a632230d3520322f5f496b9a6372ecfebd63b009074e27fa7b"
+    },
+    {
+      "path": "history-cold-war/index.html",
+      "sizeBytes": 27886,
+      "sha256": "2d83ef78509416a632230d3520322f5f496b9a6372ecfebd63b009074e27fa7b"
+    },
+    {
+      "path": "history-french-revolution.html",
+      "sizeBytes": 28299,
+      "sha256": "c2a65ecf1f1de36adbbbcea60228090c11ea2dc3a758396924d9bf77b8961e89"
+    },
+    {
+      "path": "history-french-revolution/index.html",
+      "sizeBytes": 28299,
+      "sha256": "c2a65ecf1f1de36adbbbcea60228090c11ea2dc3a758396924d9bf77b8961e89"
+    },
+    {
+      "path": "history-industrial-revolution.html",
+      "sizeBytes": 28462,
+      "sha256": "2dbb9515e81ca74f2626329a1f377e2a50b92028e86194334f54a481ce508941"
+    },
+    {
+      "path": "history-industrial-revolution/index.html",
+      "sizeBytes": 28462,
+      "sha256": "2dbb9515e81ca74f2626329a1f377e2a50b92028e86194334f54a481ce508941"
+    },
+    {
+      "path": "history-ming-dynasty.html",
+      "sizeBytes": 28161,
+      "sha256": "a34d997b4453d7b5c4d82d7e015075aef9a68316caf663945a534f74cea2718c"
+    },
+    {
+      "path": "history-ming-dynasty/index.html",
+      "sizeBytes": 28161,
+      "sha256": "a34d997b4453d7b5c4d82d7e015075aef9a68316caf663945a534f74cea2718c"
+    },
+    {
+      "path": "history-roman-empire.html",
+      "sizeBytes": 28095,
+      "sha256": "fdcb31cc9ea665442b88d62da49fd2a7a747fb0df6824b199dd5bcc9114f2f27"
+    },
+    {
+      "path": "history-roman-empire/index.html",
+      "sizeBytes": 28095,
+      "sha256": "fdcb31cc9ea665442b88d62da49fd2a7a747fb0df6824b199dd5bcc9114f2f27"
+    },
+    {
+      "path": "history-world-war-ii.html",
+      "sizeBytes": 32742,
+      "sha256": "744af3306b66e3fcd70a4274befb40c51c00cb8c64791d7f8191caab2d66854b"
+    },
+    {
+      "path": "history-world-war-ii/index.html",
+      "sizeBytes": 32742,
+      "sha256": "744af3306b66e3fcd70a4274befb40c51c00cb8c64791d7f8191caab2d66854b"
+    },
+    {
+      "path": "index.html",
+      "sizeBytes": 16875,
+      "sha256": "c07c71a8683e1e9c1fd94965b61743f89bec06ce1024f8ad81dd2b905f9529aa"
+    },
+    {
+      "path": "literature-modernism.html",
+      "sizeBytes": 32130,
+      "sha256": "502fb7a4476a8dc862cd461dea339a61718d30c23573554ee21389c92df77eec"
+    },
+    {
+      "path": "literature-modernism/index.html",
+      "sizeBytes": 32130,
+      "sha256": "502fb7a4476a8dc862cd461dea339a61718d30c23573554ee21389c92df77eec"
+    },
+    {
+      "path": "literature-post-colonial-literature.html",
+      "sizeBytes": 28069,
+      "sha256": "f5964159adb9ac15801fe91f79b6e699944b0d206e46fa37919e96837db96f01"
+    },
+    {
+      "path": "literature-post-colonial-literature/index.html",
+      "sizeBytes": 28069,
+      "sha256": "f5964159adb9ac15801fe91f79b6e699944b0d206e46fa37919e96837db96f01"
+    },
+    {
+      "path": "literature-renaissance-prose.html",
+      "sizeBytes": 27807,
+      "sha256": "0a8ab3ce7131b5c6f38e45b8974a0c1d3907e45297f9789788a7db0af739c3ad"
+    },
+    {
+      "path": "literature-renaissance-prose/index.html",
+      "sizeBytes": 27807,
+      "sha256": "0a8ab3ce7131b5c6f38e45b8974a0c1d3907e45297f9789788a7db0af739c3ad"
+    },
+    {
+      "path": "literature-shakespeare.html",
+      "sizeBytes": 32546,
+      "sha256": "1c5850787b735aecd93362a81567472f5aa55821e5af58cd2e1b9dee7733bb0b"
+    },
+    {
+      "path": "literature-shakespeare/index.html",
+      "sizeBytes": 32546,
+      "sha256": "1c5850787b735aecd93362a81567472f5aa55821e5af58cd2e1b9dee7733bb0b"
+    },
+    {
+      "path": "literature-victorian-literature.html",
+      "sizeBytes": 28310,
+      "sha256": "cf8ff3189c533bb356d3fd767d7ebd7daf0a06a0855e00bf9f2458dc43fa4f1e"
+    },
+    {
+      "path": "literature-victorian-literature/index.html",
+      "sizeBytes": 28310,
+      "sha256": "cf8ff3189c533bb356d3fd767d7ebd7daf0a06a0855e00bf9f2458dc43fa4f1e"
+    },
+    {
+      "path": "logo.svg",
+      "sizeBytes": 697,
+      "sha256": "880e8dcc2b83112b5cd35109dc988813280d5622e9f58c10e5bde960a5dff473"
+    },
+    {
+      "path": "manifest.json",
+      "sizeBytes": 676,
+      "sha256": "afd5a8e2d84908a27bce593d2ff4abd7463de91398978e1829d91992f7a6aa69"
+    },
+    {
+      "path": "math-algebra.html",
+      "sizeBytes": 31314,
+      "sha256": "ff09cf0d2f8a0e5e9ca1cc9cbc02d5413dbd78be3951bee393f674e99bd04ed5"
+    },
+    {
+      "path": "math-algebra/index.html",
+      "sizeBytes": 31314,
+      "sha256": "ff09cf0d2f8a0e5e9ca1cc9cbc02d5413dbd78be3951bee393f674e99bd04ed5"
+    },
+    {
+      "path": "math-calculus.html",
+      "sizeBytes": 32767,
+      "sha256": "802c8862b0a9df1c4343304bb457e61bd190b796f35de558a443d788f468118c"
+    },
+    {
+      "path": "math-calculus/index.html",
+      "sizeBytes": 32767,
+      "sha256": "802c8862b0a9df1c4343304bb457e61bd190b796f35de558a443d788f468118c"
+    },
+    {
+      "path": "math-geometry.html",
+      "sizeBytes": 27911,
+      "sha256": "895536aa1dc68a2f4c05b9f7f2273259df453eef28b282f854edd27822d2a8f0"
+    },
+    {
+      "path": "math-geometry/index.html",
+      "sizeBytes": 27911,
+      "sha256": "895536aa1dc68a2f4c05b9f7f2273259df453eef28b282f854edd27822d2a8f0"
+    },
+    {
+      "path": "math-graph-theory.html",
+      "sizeBytes": 27859,
+      "sha256": "aa896bb5b6c004016d038ffe460dfff54e26f0a40bfcb6ef8d3f0765e9841e83"
+    },
+    {
+      "path": "math-graph-theory/index.html",
+      "sizeBytes": 27859,
+      "sha256": "aa896bb5b6c004016d038ffe460dfff54e26f0a40bfcb6ef8d3f0765e9841e83"
+    },
+    {
+      "path": "math-linear-algebra.html",
+      "sizeBytes": 27884,
+      "sha256": "615302258bd2770eb3d8cad066eda181ce3e2ba620bbd32f9feea71a9e4faa25"
+    },
+    {
+      "path": "math-linear-algebra/index.html",
+      "sizeBytes": 27884,
+      "sha256": "615302258bd2770eb3d8cad066eda181ce3e2ba620bbd32f9feea71a9e4faa25"
+    },
+    {
+      "path": "math-number-theory.html",
+      "sizeBytes": 27824,
+      "sha256": "3eed574024c60796f9ab7859fdf064fb32535a6a48fa622f8641e3ec74a20dba"
+    },
+    {
+      "path": "math-number-theory/index.html",
+      "sizeBytes": 27824,
+      "sha256": "3eed574024c60796f9ab7859fdf064fb32535a6a48fa622f8641e3ec74a20dba"
+    },
+    {
+      "path": "math-statistics.html",
+      "sizeBytes": 32038,
+      "sha256": "d90c88707deafb2975f0819f6f98cb99d4f601180cdd9cf871c1acfbfa7f301f"
+    },
+    {
+      "path": "math-statistics/index.html",
+      "sizeBytes": 32038,
+      "sha256": "d90c88707deafb2975f0819f6f98cb99d4f601180cdd9cf871c1acfbfa7f301f"
+    },
+    {
+      "path": "math-trigonometry.html",
+      "sizeBytes": 28039,
+      "sha256": "d368dfd38a0a533dda5cbab4d406a72e32481d8602e62f0360279d88b8d149c3"
+    },
+    {
+      "path": "math-trigonometry/index.html",
+      "sizeBytes": 28039,
+      "sha256": "d368dfd38a0a533dda5cbab4d406a72e32481d8602e62f0360279d88b8d149c3"
+    },
+    {
+      "path": "og-main.png",
+      "sizeBytes": 637715,
+      "sha256": "df005cbdff002f2dd9b1cb1f63075d8ae5f5aed02913cbb1e1a3582a076f428e"
+    },
+    {
+      "path": "physics-astrophysics.html",
+      "sizeBytes": 28234,
+      "sha256": "01bf83da4b55db8e928e74621c96ab983f7a1336a450e28cfb01de1b164eaf58"
+    },
+    {
+      "path": "physics-astrophysics/index.html",
+      "sizeBytes": 28234,
+      "sha256": "01bf83da4b55db8e928e74621c96ab983f7a1336a450e28cfb01de1b164eaf58"
+    },
+    {
+      "path": "physics-electromagnetism.html",
+      "sizeBytes": 32309,
+      "sha256": "c23e6affea8235d884fc5377e253a83816734fbfe4b85d68cfb5333408291c40"
+    },
+    {
+      "path": "physics-electromagnetism/index.html",
+      "sizeBytes": 32309,
+      "sha256": "c23e6affea8235d884fc5377e253a83816734fbfe4b85d68cfb5333408291c40"
+    },
+    {
+      "path": "physics-fluid-dynamics.html",
+      "sizeBytes": 28073,
+      "sha256": "02a04a996f3be5fb2e5d6e0434584d310932275ad39f4ac0a6b27b9e90daaaa0"
+    },
+    {
+      "path": "physics-fluid-dynamics/index.html",
+      "sizeBytes": 28073,
+      "sha256": "02a04a996f3be5fb2e5d6e0434584d310932275ad39f4ac0a6b27b9e90daaaa0"
+    },
+    {
+      "path": "physics-mechanics.html",
+      "sizeBytes": 32498,
+      "sha256": "5a7ebb8150c3c6be0688e197f09dbc7334b5098027023f787bd2ca119181d8c8"
+    },
+    {
+      "path": "physics-mechanics/index.html",
+      "sizeBytes": 32498,
+      "sha256": "5a7ebb8150c3c6be0688e197f09dbc7334b5098027023f787bd2ca119181d8c8"
+    },
+    {
+      "path": "physics-nuclear-physics.html",
+      "sizeBytes": 28108,
+      "sha256": "fd1fd8832423c6346371f35de1fc287a2943dbcd9ebd0b1fedd89bc838c70d6b"
+    },
+    {
+      "path": "physics-nuclear-physics/index.html",
+      "sizeBytes": 28108,
+      "sha256": "fd1fd8832423c6346371f35de1fc287a2943dbcd9ebd0b1fedd89bc838c70d6b"
+    },
+    {
+      "path": "physics-optics.html",
+      "sizeBytes": 27911,
+      "sha256": "eea93c87bd4d0ee11e15092218a0f299b18129bb620d953053d33f57b3374392"
+    },
+    {
+      "path": "physics-optics/index.html",
+      "sizeBytes": 27911,
+      "sha256": "eea93c87bd4d0ee11e15092218a0f299b18129bb620d953053d33f57b3374392"
+    },
+    {
+      "path": "physics-quantum-physics.html",
+      "sizeBytes": 27837,
+      "sha256": "284e9e1d88f46062c25930f5adaadd41772055078547d4822776867a5cd68036"
+    },
+    {
+      "path": "physics-quantum-physics/index.html",
+      "sizeBytes": 27837,
+      "sha256": "284e9e1d88f46062c25930f5adaadd41772055078547d4822776867a5cd68036"
+    },
+    {
+      "path": "physics-relativity.html",
+      "sizeBytes": 27664,
+      "sha256": "f488d41794762a2b55e94639dab565663e740ad8f80415bf5bee868017384764"
+    },
+    {
+      "path": "physics-relativity/index.html",
+      "sizeBytes": 27664,
+      "sha256": "f488d41794762a2b55e94639dab565663e740ad8f80415bf5bee868017384764"
+    },
+    {
+      "path": "privacy-policy.html",
+      "sizeBytes": 8766,
+      "sha256": "e29ac0dea74a57818fb128dfbff02fe61e4c4a45b579ce9df8b76fabce340223"
+    },
+    {
+      "path": "privacy-policy/index.html",
+      "sizeBytes": 8766,
+      "sha256": "e29ac0dea74a57818fb128dfbff02fe61e4c4a45b579ce9df8b76fabce340223"
+    },
+    {
+      "path": "psychology-behavioral-neuroscience.html",
+      "sizeBytes": 28230,
+      "sha256": "6b885b43c55df492c3034e00b7de30228d99279bde3d1b1c5c00730652bdf394"
+    },
+    {
+      "path": "psychology-behavioral-neuroscience/index.html",
+      "sizeBytes": 28230,
+      "sha256": "6b885b43c55df492c3034e00b7de30228d99279bde3d1b1c5c00730652bdf394"
+    },
+    {
+      "path": "psychology-clinical-psychology.html",
+      "sizeBytes": 28065,
+      "sha256": "9d9561fb84eec303671700c680b4b278aa128efb2f57ffe50e4a069d254c351b"
+    },
+    {
+      "path": "psychology-clinical-psychology/index.html",
+      "sizeBytes": 28065,
+      "sha256": "9d9561fb84eec303671700c680b4b278aa128efb2f57ffe50e4a069d254c351b"
+    },
+    {
+      "path": "psychology-cognitive-psychology.html",
+      "sizeBytes": 33498,
+      "sha256": "b2809d64897b4c21dabb4f7ab777b290e7650d7ac3b214daf3b3bedb3db7e74a"
+    },
+    {
+      "path": "psychology-cognitive-psychology/index.html",
+      "sizeBytes": 33498,
+      "sha256": "b2809d64897b4c21dabb4f7ab777b290e7650d7ac3b214daf3b3bedb3db7e74a"
+    },
+    {
+      "path": "psychology-developmental-psychology.html",
+      "sizeBytes": 28838,
+      "sha256": "c6832e50bbde0aa8ebd9753958e105112a3a358d0c9642962ae0c1bd852bd742"
+    },
+    {
+      "path": "psychology-developmental-psychology/index.html",
+      "sizeBytes": 28838,
+      "sha256": "c6832e50bbde0aa8ebd9753958e105112a3a358d0c9642962ae0c1bd852bd742"
+    },
+    {
+      "path": "psychology-social-psychology.html",
+      "sizeBytes": 33634,
+      "sha256": "f22376e9f3aeb1036bd48b4a2c3a61423ed2a0d3e764f3dc0a3d6322e99f8045"
+    },
+    {
+      "path": "psychology-social-psychology/index.html",
+      "sizeBytes": 33634,
+      "sha256": "f22376e9f3aeb1036bd48b4a2c3a61423ed2a0d3e764f3dc0a3d6322e99f8045"
+    },
+    {
+      "path": "quiz/biology-biochemistry.html",
+      "sizeBytes": 18382,
+      "sha256": "d08f7594b4ee600c5a4fe505744cbb883c80d472ed829b52077735768a7ecc4a"
+    },
+    {
+      "path": "quiz/biology-biochemistry/index.html",
+      "sizeBytes": 18382,
+      "sha256": "d08f7594b4ee600c5a4fe505744cbb883c80d472ed829b52077735768a7ecc4a"
+    },
+    {
+      "path": "quiz/biology-botany.html",
+      "sizeBytes": 18464,
+      "sha256": "87f23a02a7fcce98b79740f8ebf4f2ad51fd0ef569ac4bf2412bae59dcc1fc59"
+    },
+    {
+      "path": "quiz/biology-botany/index.html",
+      "sizeBytes": 18464,
+      "sha256": "87f23a02a7fcce98b79740f8ebf4f2ad51fd0ef569ac4bf2412bae59dcc1fc59"
+    },
+    {
+      "path": "quiz/biology-cell-biology.html",
+      "sizeBytes": 18114,
+      "sha256": "9f0a6a931ec738e9b1d8c5bd93870862cb70b3352efb6604dcdcb6867e4d1452"
+    },
+    {
+      "path": "quiz/biology-cell-biology/index.html",
+      "sizeBytes": 18114,
+      "sha256": "9f0a6a931ec738e9b1d8c5bd93870862cb70b3352efb6604dcdcb6867e4d1452"
+    },
+    {
+      "path": "quiz/biology-ecology.html",
+      "sizeBytes": 18479,
+      "sha256": "5d460d4f07eb0343433d87afdc28e82d7f4a0b6edd3dbee161243ae5ef37a2b2"
+    },
+    {
+      "path": "quiz/biology-ecology/index.html",
+      "sizeBytes": 18479,
+      "sha256": "5d460d4f07eb0343433d87afdc28e82d7f4a0b6edd3dbee161243ae5ef37a2b2"
+    },
+    {
+      "path": "quiz/biology-evolution.html",
+      "sizeBytes": 18225,
+      "sha256": "d04a062cf4a3f934360657dff2d3ac28c485464d1a4423e0e3a693c2bb1f4462"
+    },
+    {
+      "path": "quiz/biology-evolution/index.html",
+      "sizeBytes": 18225,
+      "sha256": "d04a062cf4a3f934360657dff2d3ac28c485464d1a4423e0e3a693c2bb1f4462"
+    },
+    {
+      "path": "quiz/biology-genetics.html",
+      "sizeBytes": 18032,
+      "sha256": "6a74579573c35d10ad3bd7c478821973b029784bcfccf9e2ba2d21ad32c33697"
+    },
+    {
+      "path": "quiz/biology-genetics/index.html",
+      "sizeBytes": 18032,
+      "sha256": "6a74579573c35d10ad3bd7c478821973b029784bcfccf9e2ba2d21ad32c33697"
+    },
+    {
+      "path": "quiz/biology-human-anatomy.html",
+      "sizeBytes": 18581,
+      "sha256": "08805268b2fbe2003d9de48339410a995cf85e641f829b3ed6e880bf56fb5e03"
+    },
+    {
+      "path": "quiz/biology-human-anatomy/index.html",
+      "sizeBytes": 18581,
+      "sha256": "08805268b2fbe2003d9de48339410a995cf85e641f829b3ed6e880bf56fb5e03"
+    },
+    {
+      "path": "quiz/biology-marine-biology.html",
+      "sizeBytes": 18593,
+      "sha256": "8a3d3cdeb3badd133315eddd2f6caf9b00fd4ff84b81d53c09c673a443d0e063"
+    },
+    {
+      "path": "quiz/biology-marine-biology/index.html",
+      "sizeBytes": 18593,
+      "sha256": "8a3d3cdeb3badd133315eddd2f6caf9b00fd4ff84b81d53c09c673a443d0e063"
+    },
+    {
+      "path": "quiz/biology-microbiology.html",
+      "sizeBytes": 18561,
+      "sha256": "5b91ce6e7eaebcc30078e5487abf84f3491c6481f17d27c59fdf2561464534a6"
+    },
+    {
+      "path": "quiz/biology-microbiology/index.html",
+      "sizeBytes": 18561,
+      "sha256": "5b91ce6e7eaebcc30078e5487abf84f3491c6481f17d27c59fdf2561464534a6"
+    },
+    {
+      "path": "quiz/biology-zoology.html",
+      "sizeBytes": 18490,
+      "sha256": "d546f61c552dc84dacb073c0ddc8e31cb06974dc066d274d45581ecc70f834cf"
+    },
+    {
+      "path": "quiz/biology-zoology/index.html",
+      "sizeBytes": 18490,
+      "sha256": "d546f61c552dc84dacb073c0ddc8e31cb06974dc066d274d45581ecc70f834cf"
+    },
+    {
+      "path": "quiz/chemistry-acids-and-bases.html",
+      "sizeBytes": 18644,
+      "sha256": "3aac556cd507a582140fa16ccf660fd4b9d496e77d8f7f3efae28229851dcc44"
+    },
+    {
+      "path": "quiz/chemistry-acids-and-bases/index.html",
+      "sizeBytes": 18644,
+      "sha256": "3aac556cd507a582140fa16ccf660fd4b9d496e77d8f7f3efae28229851dcc44"
+    },
+    {
+      "path": "quiz/chemistry-analytical-chemistry.html",
+      "sizeBytes": 18556,
+      "sha256": "dd3a312080afc68d570e4d9094fb231cc6e6e61b428c7bf78defc39b6162983b"
+    },
+    {
+      "path": "quiz/chemistry-analytical-chemistry/index.html",
+      "sizeBytes": 18556,
+      "sha256": "dd3a312080afc68d570e4d9094fb231cc6e6e61b428c7bf78defc39b6162983b"
+    },
+    {
+      "path": "quiz/chemistry-chemical-bonding.html",
+      "sizeBytes": 18658,
+      "sha256": "8b11a8561ec41dbfec98e12c9c6ac067211fbb4321ead57f33d70ba56327392d"
+    },
+    {
+      "path": "quiz/chemistry-chemical-bonding/index.html",
+      "sizeBytes": 18658,
+      "sha256": "8b11a8561ec41dbfec98e12c9c6ac067211fbb4321ead57f33d70ba56327392d"
+    },
+    {
+      "path": "quiz/chemistry-inorganic-chemistry.html",
+      "sizeBytes": 18707,
+      "sha256": "1d5cd02767daa7f718c0e2d7c22d8a0cda15daf7f62c7e761d149fe2cdb75e85"
+    },
+    {
+      "path": "quiz/chemistry-inorganic-chemistry/index.html",
+      "sizeBytes": 18707,
+      "sha256": "1d5cd02767daa7f718c0e2d7c22d8a0cda15daf7f62c7e761d149fe2cdb75e85"
+    },
+    {
+      "path": "quiz/chemistry-organic-chemistry.html",
+      "sizeBytes": 18122,
+      "sha256": "b39d187caa6b7e3cfbfb4f9bc75f11a8dcfc73b37baef42cde31772e00a913c4"
+    },
+    {
+      "path": "quiz/chemistry-organic-chemistry/index.html",
+      "sizeBytes": 18122,
+      "sha256": "b39d187caa6b7e3cfbfb4f9bc75f11a8dcfc73b37baef42cde31772e00a913c4"
+    },
+    {
+      "path": "quiz/chemistry-periodic-table.html",
+      "sizeBytes": 18253,
+      "sha256": "c59dfed868ba6d569fb760eabd064b0ab5c4e9bf2e4718b140359145daedeb74"
+    },
+    {
+      "path": "quiz/chemistry-periodic-table/index.html",
+      "sizeBytes": 18253,
+      "sha256": "c59dfed868ba6d569fb760eabd064b0ab5c4e9bf2e4718b140359145daedeb74"
+    },
+    {
+      "path": "quiz/chemistry-physical-chemistry.html",
+      "sizeBytes": 18515,
+      "sha256": "e86eb6ee2a4aba29827b5fbe9ca78bf1f1ae2d8a9d1882691303a9d8aebd7e35"
+    },
+    {
+      "path": "quiz/chemistry-physical-chemistry/index.html",
+      "sizeBytes": 18515,
+      "sha256": "e86eb6ee2a4aba29827b5fbe9ca78bf1f1ae2d8a9d1882691303a9d8aebd7e35"
+    },
+    {
+      "path": "quiz/chemistry-thermodynamics.html",
+      "sizeBytes": 18449,
+      "sha256": "9908a71008e0762a2ed5c626ca965a5e1751aadb81f4df9a412d262ce3215f67"
+    },
+    {
+      "path": "quiz/chemistry-thermodynamics/index.html",
+      "sizeBytes": 18449,
+      "sha256": "9908a71008e0762a2ed5c626ca965a5e1751aadb81f4df9a412d262ce3215f67"
+    },
+    {
+      "path": "quiz/computer-science-algorithms.html",
+      "sizeBytes": 18619,
+      "sha256": "1f6fa37a35c757bd9ceff82f064ad853591fab566bd10d745a9e767cbacd733b"
+    },
+    {
+      "path": "quiz/computer-science-algorithms/index.html",
+      "sizeBytes": 18619,
+      "sha256": "1f6fa37a35c757bd9ceff82f064ad853591fab566bd10d745a9e767cbacd733b"
+    },
+    {
+      "path": "quiz/computer-science-cloud-computing.html",
+      "sizeBytes": 18010,
+      "sha256": "b31590444698609f03dbf11796d5cde992a1462c6b266cdf1019ba9256a74d0b"
+    },
+    {
+      "path": "quiz/computer-science-cloud-computing/index.html",
+      "sizeBytes": 18010,
+      "sha256": "b31590444698609f03dbf11796d5cde992a1462c6b266cdf1019ba9256a74d0b"
+    },
+    {
+      "path": "quiz/computer-science-cybersecurity.html",
+      "sizeBytes": 18330,
+      "sha256": "4d343efb6858ea7901498018a62534631be8119e287331788bb97853cd31649a"
+    },
+    {
+      "path": "quiz/computer-science-cybersecurity/index.html",
+      "sizeBytes": 18330,
+      "sha256": "4d343efb6858ea7901498018a62534631be8119e287331788bb97853cd31649a"
+    },
+    {
+      "path": "quiz/computer-science-data-structures.html",
+      "sizeBytes": 18641,
+      "sha256": "0f7d140d1aae105e95f9557cfcb05127a3635fbdc4524ccf526c751ca267120a"
+    },
+    {
+      "path": "quiz/computer-science-data-structures/index.html",
+      "sizeBytes": 18641,
+      "sha256": "0f7d140d1aae105e95f9557cfcb05127a3635fbdc4524ccf526c751ca267120a"
+    },
+    {
+      "path": "quiz/computer-science-database-systems.html",
+      "sizeBytes": 18376,
+      "sha256": "cd4fff5bb731d445e74b1f18970e60448fdcc27a3067637433106eab8c64492a"
+    },
+    {
+      "path": "quiz/computer-science-database-systems/index.html",
+      "sizeBytes": 18376,
+      "sha256": "cd4fff5bb731d445e74b1f18970e60448fdcc27a3067637433106eab8c64492a"
+    },
+    {
+      "path": "quiz/computer-science-machine-learning.html",
+      "sizeBytes": 17661,
+      "sha256": "9b1cfb137de1be215368ee725f06fce032d058b91a0cef1a6e131e27b05b90a0"
+    },
+    {
+      "path": "quiz/computer-science-machine-learning/index.html",
+      "sizeBytes": 17661,
+      "sha256": "9b1cfb137de1be215368ee725f06fce032d058b91a0cef1a6e131e27b05b90a0"
+    },
+    {
+      "path": "quiz/computer-science-operating-systems.html",
+      "sizeBytes": 18033,
+      "sha256": "ca87626c67e38dd94fc241064e9afc65bd11494ef87db73140ed265f56e430e2"
+    },
+    {
+      "path": "quiz/computer-science-operating-systems/index.html",
+      "sizeBytes": 18033,
+      "sha256": "ca87626c67e38dd94fc241064e9afc65bd11494ef87db73140ed265f56e430e2"
+    },
+    {
+      "path": "quiz/computer-science-web-development.html",
+      "sizeBytes": 18538,
+      "sha256": "a3232e2ee12599789a258776bdc729c69481256e33a8ebe9750c3099e24f916f"
+    },
+    {
+      "path": "quiz/computer-science-web-development/index.html",
+      "sizeBytes": 18538,
+      "sha256": "a3232e2ee12599789a258776bdc729c69481256e33a8ebe9750c3099e24f916f"
+    },
+    {
+      "path": "quiz/economics-econometrics.html",
+      "sizeBytes": 17886,
+      "sha256": "05ce2c6e9462e70c94be376e1ef359c53c6f8f637c6b9efb7e79e11c82ac428d"
+    },
+    {
+      "path": "quiz/economics-econometrics/index.html",
+      "sizeBytes": 17886,
+      "sha256": "05ce2c6e9462e70c94be376e1ef359c53c6f8f637c6b9efb7e79e11c82ac428d"
+    },
+    {
+      "path": "quiz/economics-game-theory.html",
+      "sizeBytes": 18226,
+      "sha256": "c534197f077fd035cf3fbd97f3c0014f9c8b594edb7434736f9fb5cd69606cc5"
+    },
+    {
+      "path": "quiz/economics-game-theory/index.html",
+      "sizeBytes": 18226,
+      "sha256": "c534197f077fd035cf3fbd97f3c0014f9c8b594edb7434736f9fb5cd69606cc5"
+    },
+    {
+      "path": "quiz/economics-international-trade.html",
+      "sizeBytes": 18355,
+      "sha256": "c8cb4197ce5314702138fcb3f3a0575c07dcd794bcd8912a8e54bc0004af43c4"
+    },
+    {
+      "path": "quiz/economics-international-trade/index.html",
+      "sizeBytes": 18355,
+      "sha256": "c8cb4197ce5314702138fcb3f3a0575c07dcd794bcd8912a8e54bc0004af43c4"
+    },
+    {
+      "path": "quiz/economics-macroeconomics.html",
+      "sizeBytes": 18320,
+      "sha256": "968f93da7fb94c5040086c06f0d18ed17966ec3e9ac9f08c1699754d758ee8d8"
+    },
+    {
+      "path": "quiz/economics-macroeconomics/index.html",
+      "sizeBytes": 18320,
+      "sha256": "968f93da7fb94c5040086c06f0d18ed17966ec3e9ac9f08c1699754d758ee8d8"
+    },
+    {
+      "path": "quiz/economics-microeconomics.html",
+      "sizeBytes": 18477,
+      "sha256": "7e474a72aeb8499f42e4fdc5490941af6d86f24ab14c37e334a8e20df7776a22"
+    },
+    {
+      "path": "quiz/economics-microeconomics/index.html",
+      "sizeBytes": 18477,
+      "sha256": "7e474a72aeb8499f42e4fdc5490941af6d86f24ab14c37e334a8e20df7776a22"
+    },
+    {
+      "path": "quiz/history-american-civil-war.html",
+      "sizeBytes": 18495,
+      "sha256": "e9c3025481d4d3f4f745730d29fc2e0dbd2a2e9e26dafd5d8c70853de159c5ca"
+    },
+    {
+      "path": "quiz/history-american-civil-war/index.html",
+      "sizeBytes": 18495,
+      "sha256": "e9c3025481d4d3f4f745730d29fc2e0dbd2a2e9e26dafd5d8c70853de159c5ca"
+    },
+    {
+      "path": "quiz/history-ancient-egypt.html",
+      "sizeBytes": 18305,
+      "sha256": "f8f2ca7b167cc6273834544da85efdedddb5f4c1759e920e8b59ac6288800caf"
+    },
+    {
+      "path": "quiz/history-ancient-egypt/index.html",
+      "sizeBytes": 18305,
+      "sha256": "f8f2ca7b167cc6273834544da85efdedddb5f4c1759e920e8b59ac6288800caf"
+    },
+    {
+      "path": "quiz/history-cold-war.html",
+      "sizeBytes": 18334,
+      "sha256": "dd28de2f4833a055ccdb6641c2bcb3cae328fe4df699995e27112e7a119b2654"
+    },
+    {
+      "path": "quiz/history-cold-war/index.html",
+      "sizeBytes": 18334,
+      "sha256": "dd28de2f4833a055ccdb6641c2bcb3cae328fe4df699995e27112e7a119b2654"
+    },
+    {
+      "path": "quiz/history-french-revolution.html",
+      "sizeBytes": 18484,
+      "sha256": "96409e230ca5a87283ce53ab185921a40ca1a345773538bfee63d81c26757620"
+    },
+    {
+      "path": "quiz/history-french-revolution/index.html",
+      "sizeBytes": 18484,
+      "sha256": "96409e230ca5a87283ce53ab185921a40ca1a345773538bfee63d81c26757620"
+    },
+    {
+      "path": "quiz/history-industrial-revolution.html",
+      "sizeBytes": 18550,
+      "sha256": "4703caf651a3b7f5ec1546e7bbb350c5a0fa7a9bac6f9ea1c1d3deab5e1311ac"
+    },
+    {
+      "path": "quiz/history-industrial-revolution/index.html",
+      "sizeBytes": 18550,
+      "sha256": "4703caf651a3b7f5ec1546e7bbb350c5a0fa7a9bac6f9ea1c1d3deab5e1311ac"
+    },
+    {
+      "path": "quiz/history-ming-dynasty.html",
+      "sizeBytes": 18407,
+      "sha256": "998695e795026dece9827d5eb63f4cfec1c6789b96eefe33de36b784e732c863"
+    },
+    {
+      "path": "quiz/history-ming-dynasty/index.html",
+      "sizeBytes": 18407,
+      "sha256": "998695e795026dece9827d5eb63f4cfec1c6789b96eefe33de36b784e732c863"
+    },
+    {
+      "path": "quiz/history-roman-empire.html",
+      "sizeBytes": 18405,
+      "sha256": "c4c6c046576c101ee70927d9a10dddbd253a066c7bc9219e283ae6ce62bfe4ca"
+    },
+    {
+      "path": "quiz/history-roman-empire/index.html",
+      "sizeBytes": 18405,
+      "sha256": "c4c6c046576c101ee70927d9a10dddbd253a066c7bc9219e283ae6ce62bfe4ca"
+    },
+    {
+      "path": "quiz/history-world-war-ii.html",
+      "sizeBytes": 18262,
+      "sha256": "2ac36bac9e01238110c2441b1e4628d3674c1d4fcbcbf71362c0c3151a931054"
+    },
+    {
+      "path": "quiz/history-world-war-ii/index.html",
+      "sizeBytes": 18262,
+      "sha256": "2ac36bac9e01238110c2441b1e4628d3674c1d4fcbcbf71362c0c3151a931054"
+    },
+    {
+      "path": "quiz/literature-modernism.html",
+      "sizeBytes": 17666,
+      "sha256": "563803b0829fe21f4b9e1fa260d728d13b2340930fc18a95fe87bf11f61cd095"
+    },
+    {
+      "path": "quiz/literature-modernism/index.html",
+      "sizeBytes": 17666,
+      "sha256": "563803b0829fe21f4b9e1fa260d728d13b2340930fc18a95fe87bf11f61cd095"
+    },
+    {
+      "path": "quiz/literature-post-colonial-literature.html",
+      "sizeBytes": 18086,
+      "sha256": "435fba59d6c51c94c88800e83c991c654f3eccaf237c019fcd51add3f55e27ac"
+    },
+    {
+      "path": "quiz/literature-post-colonial-literature/index.html",
+      "sizeBytes": 18086,
+      "sha256": "435fba59d6c51c94c88800e83c991c654f3eccaf237c019fcd51add3f55e27ac"
+    },
+    {
+      "path": "quiz/literature-renaissance-prose.html",
+      "sizeBytes": 17973,
+      "sha256": "46eaf1c7531cac767517e944e33dab7776f50990d19152ad84da7b915ecb0592"
+    },
+    {
+      "path": "quiz/literature-renaissance-prose/index.html",
+      "sizeBytes": 17973,
+      "sha256": "46eaf1c7531cac767517e944e33dab7776f50990d19152ad84da7b915ecb0592"
+    },
+    {
+      "path": "quiz/literature-shakespeare.html",
+      "sizeBytes": 18234,
+      "sha256": "6b0ae729011e60942674b11f707cb723f6b4394921c6141a93449c593dc2b26a"
+    },
+    {
+      "path": "quiz/literature-shakespeare/index.html",
+      "sizeBytes": 18234,
+      "sha256": "6b0ae729011e60942674b11f707cb723f6b4394921c6141a93449c593dc2b26a"
+    },
+    {
+      "path": "quiz/literature-victorian-literature.html",
+      "sizeBytes": 18379,
+      "sha256": "49732ed64a8ec2fc7c9d2e9e6109ef9a6f0234c4a2b7d16c6ca3d890e183af2c"
+    },
+    {
+      "path": "quiz/literature-victorian-literature/index.html",
+      "sizeBytes": 18379,
+      "sha256": "49732ed64a8ec2fc7c9d2e9e6109ef9a6f0234c4a2b7d16c6ca3d890e183af2c"
+    },
+    {
+      "path": "quiz/math-algebra.html",
+      "sizeBytes": 18013,
+      "sha256": "2f5c2e33706fa0235d7f7c71a0355fd7a6142fe1a77a123a40a0232bab25835d"
+    },
+    {
+      "path": "quiz/math-algebra/index.html",
+      "sizeBytes": 18013,
+      "sha256": "2f5c2e33706fa0235d7f7c71a0355fd7a6142fe1a77a123a40a0232bab25835d"
+    },
+    {
+      "path": "quiz/math-calculus.html",
+      "sizeBytes": 18022,
+      "sha256": "200f0db1129092c27ecfdce8ab5ae75b3d537566d5d388eb0a11d23efd1b06ac"
+    },
+    {
+      "path": "quiz/math-calculus/index.html",
+      "sizeBytes": 18022,
+      "sha256": "200f0db1129092c27ecfdce8ab5ae75b3d537566d5d388eb0a11d23efd1b06ac"
+    },
+    {
+      "path": "quiz/math-geometry.html",
+      "sizeBytes": 18304,
+      "sha256": "bc59e0b81d2fa8f3d6f28a5111d03f4a5f9e64d793bb242d91c02b698bee523a"
+    },
+    {
+      "path": "quiz/math-geometry/index.html",
+      "sizeBytes": 18304,
+      "sha256": "bc59e0b81d2fa8f3d6f28a5111d03f4a5f9e64d793bb242d91c02b698bee523a"
+    },
+    {
+      "path": "quiz/math-graph-theory.html",
+      "sizeBytes": 18189,
+      "sha256": "2f02cd67a12c94ac778e9fa3217e491cec387b7f31bd4a3bf46d73a335fe917b"
+    },
+    {
+      "path": "quiz/math-graph-theory/index.html",
+      "sizeBytes": 18189,
+      "sha256": "2f02cd67a12c94ac778e9fa3217e491cec387b7f31bd4a3bf46d73a335fe917b"
+    },
+    {
+      "path": "quiz/math-linear-algebra.html",
+      "sizeBytes": 18214,
+      "sha256": "763fe035578bb9e91524c45d6db04b1899c6d8a459e2acc0d62d37ac409f4385"
+    },
+    {
+      "path": "quiz/math-linear-algebra/index.html",
+      "sizeBytes": 18214,
+      "sha256": "763fe035578bb9e91524c45d6db04b1899c6d8a459e2acc0d62d37ac409f4385"
+    },
+    {
+      "path": "quiz/math-number-theory.html",
+      "sizeBytes": 18199,
+      "sha256": "f2cfbd2fb89ba01895474c100402764c6181c50c9a48bdef41dc440f12636eaa"
+    },
+    {
+      "path": "quiz/math-number-theory/index.html",
+      "sizeBytes": 18199,
+      "sha256": "f2cfbd2fb89ba01895474c100402764c6181c50c9a48bdef41dc440f12636eaa"
+    },
+    {
+      "path": "quiz/math-statistics.html",
+      "sizeBytes": 18397,
+      "sha256": "899a0e2a6f74c869158e0fe675e8c0b1cd65eee85c6f73cec11ef74451d00bf3"
+    },
+    {
+      "path": "quiz/math-statistics/index.html",
+      "sizeBytes": 18397,
+      "sha256": "899a0e2a6f74c869158e0fe675e8c0b1cd65eee85c6f73cec11ef74451d00bf3"
+    },
+    {
+      "path": "quiz/math-trigonometry.html",
+      "sizeBytes": 18365,
+      "sha256": "9510aa978ab3a4d6fdd1d2bc8e59760c3f8d4e955e832f937bbac3dabd38e171"
+    },
+    {
+      "path": "quiz/math-trigonometry/index.html",
+      "sizeBytes": 18365,
+      "sha256": "9510aa978ab3a4d6fdd1d2bc8e59760c3f8d4e955e832f937bbac3dabd38e171"
+    },
+    {
+      "path": "quiz/physics-astrophysics.html",
+      "sizeBytes": 18558,
+      "sha256": "dd3e122a30f2235ebbbd772eec0533f14ab8a023d79f9237745c30e72469212b"
+    },
+    {
+      "path": "quiz/physics-astrophysics/index.html",
+      "sizeBytes": 18558,
+      "sha256": "dd3e122a30f2235ebbbd772eec0533f14ab8a023d79f9237745c30e72469212b"
+    },
+    {
+      "path": "quiz/physics-electromagnetism.html",
+      "sizeBytes": 18248,
+      "sha256": "c2f37c57a0a630d26d6050706907870960e14fd219d8b65a149ff94157a5c7ed"
+    },
+    {
+      "path": "quiz/physics-electromagnetism/index.html",
+      "sizeBytes": 18248,
+      "sha256": "c2f37c57a0a630d26d6050706907870960e14fd219d8b65a149ff94157a5c7ed"
+    },
+    {
+      "path": "quiz/physics-fluid-dynamics.html",
+      "sizeBytes": 18408,
+      "sha256": "61b82cc3c2e543755d85e9670d8e1a9f7d622fa6e8da218f5fc6566502e933f9"
+    },
+    {
+      "path": "quiz/physics-fluid-dynamics/index.html",
+      "sizeBytes": 18408,
+      "sha256": "61b82cc3c2e543755d85e9670d8e1a9f7d622fa6e8da218f5fc6566502e933f9"
+    },
+    {
+      "path": "quiz/physics-mechanics.html",
+      "sizeBytes": 18242,
+      "sha256": "497f82c5784e95fed3fa06c9000cf7a13fd56bc9f3f47dbee99fd7f399d39e7b"
+    },
+    {
+      "path": "quiz/physics-mechanics/index.html",
+      "sizeBytes": 18242,
+      "sha256": "497f82c5784e95fed3fa06c9000cf7a13fd56bc9f3f47dbee99fd7f399d39e7b"
+    },
+    {
+      "path": "quiz/physics-nuclear-physics.html",
+      "sizeBytes": 18425,
+      "sha256": "0239f86dc0b2e46eb6f60c815edb12571acd4969c5a3d822fa7b715686792f81"
+    },
+    {
+      "path": "quiz/physics-nuclear-physics/index.html",
+      "sizeBytes": 18425,
+      "sha256": "0239f86dc0b2e46eb6f60c815edb12571acd4969c5a3d822fa7b715686792f81"
+    },
+    {
+      "path": "quiz/physics-optics.html",
+      "sizeBytes": 18458,
+      "sha256": "09fea535852dd1c26bb7323e954c871250a01c73336634f4fbbb410ff81a0b5a"
+    },
+    {
+      "path": "quiz/physics-optics/index.html",
+      "sizeBytes": 18458,
+      "sha256": "09fea535852dd1c26bb7323e954c871250a01c73336634f4fbbb410ff81a0b5a"
+    },
+    {
+      "path": "quiz/physics-quantum-physics.html",
+      "sizeBytes": 18078,
+      "sha256": "b592c8ac10d06dbd8e369807c4e1ba09e0b0fdb551a7cffd30327e3cb0604017"
+    },
+    {
+      "path": "quiz/physics-quantum-physics/index.html",
+      "sizeBytes": 18078,
+      "sha256": "b592c8ac10d06dbd8e369807c4e1ba09e0b0fdb551a7cffd30327e3cb0604017"
+    },
+    {
+      "path": "quiz/physics-relativity.html",
+      "sizeBytes": 18001,
+      "sha256": "8915c10357849245727d386f5329b604224ca6e725dc98160916f24b4b329807"
+    },
+    {
+      "path": "quiz/physics-relativity/index.html",
+      "sizeBytes": 18001,
+      "sha256": "8915c10357849245727d386f5329b604224ca6e725dc98160916f24b4b329807"
+    },
+    {
+      "path": "quiz/psychology-behavioral-neuroscience.html",
+      "sizeBytes": 18266,
+      "sha256": "28b8282909bc79228b0d5d5edec8210e8485a82e676ddc6d9f4150184567d4bf"
+    },
+    {
+      "path": "quiz/psychology-behavioral-neuroscience/index.html",
+      "sizeBytes": 18266,
+      "sha256": "28b8282909bc79228b0d5d5edec8210e8485a82e676ddc6d9f4150184567d4bf"
+    },
+    {
+      "path": "quiz/psychology-clinical-psychology.html",
+      "sizeBytes": 18200,
+      "sha256": "ff077df955e89cca6db4a695cada43a3891bbd1b93e03f95cedb1f72197dedd5"
+    },
+    {
+      "path": "quiz/psychology-clinical-psychology/index.html",
+      "sizeBytes": 18200,
+      "sha256": "ff077df955e89cca6db4a695cada43a3891bbd1b93e03f95cedb1f72197dedd5"
+    },
+    {
+      "path": "quiz/psychology-cognitive-psychology.html",
+      "sizeBytes": 18763,
+      "sha256": "05659b950eb57d39491d4dbd98094ece4f684749bb0a33216abbc13cabc9c540"
+    },
+    {
+      "path": "quiz/psychology-cognitive-psychology/index.html",
+      "sizeBytes": 18763,
+      "sha256": "05659b950eb57d39491d4dbd98094ece4f684749bb0a33216abbc13cabc9c540"
+    },
+    {
+      "path": "quiz/psychology-developmental-psychology.html",
+      "sizeBytes": 18814,
+      "sha256": "5319d677395cb933bd30633a720c3ab7a9b711489c753e37e383decc4ff51a25"
+    },
+    {
+      "path": "quiz/psychology-developmental-psychology/index.html",
+      "sizeBytes": 18814,
+      "sha256": "5319d677395cb933bd30633a720c3ab7a9b711489c753e37e383decc4ff51a25"
+    },
+    {
+      "path": "quiz/psychology-social-psychology.html",
+      "sizeBytes": 18624,
+      "sha256": "b51b6e393bc712d34bd048390f01dd24ded57ad046d37c948ad3b808444c97c8"
+    },
+    {
+      "path": "quiz/psychology-social-psychology/index.html",
+      "sizeBytes": 18624,
+      "sha256": "b51b6e393bc712d34bd048390f01dd24ded57ad046d37c948ad3b808444c97c8"
+    },
+    {
+      "path": "robots.txt",
+      "sizeBytes": 79,
+      "sha256": "b57592239d98ff9e7195b8cfb652aa3e07ec13e052beefabd423a731cd7a9d10"
+    },
+    {
+      "path": "sitemap.xml",
+      "sizeBytes": 2824,
+      "sha256": "065c4e66c0a9da74d7f084ac6b2a72d6501b2914823b7a2143cb143abe85164b"
+    },
+    {
+      "path": "study-timetable-template.html",
+      "sizeBytes": 61094,
+      "sha256": "bf9da20e1ebabb763f44d1313a37dbf646e567dec2f479f3e24a41b8958e66a5"
+    },
+    {
+      "path": "study-timetable-template/index.html",
+      "sizeBytes": 61094,
+      "sha256": "bf9da20e1ebabb763f44d1313a37dbf646e567dec2f479f3e24a41b8958e66a5"
+    },
+    {
+      "path": "terms-of-service.html",
+      "sizeBytes": 8679,
+      "sha256": "ce02059aebbbf8c4cd0eafa59c03f869a37f8c302804cf9144ca68a2f128a042"
+    },
+    {
+      "path": "terms-of-service/index.html",
+      "sizeBytes": 8679,
+      "sha256": "ce02059aebbbf8c4cd0eafa59c03f869a37f8c302804cf9144ca68a2f128a042"
+    }
+  ]
+}

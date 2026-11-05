@@ -1,40 +1,78 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { HelpCircle, ChevronRight, CheckCircle2, AlertCircle, RefreshCcw, Layers, Calendar, Zap, Clock } from 'lucide-react';
+import {
+  HelpCircle,
+  ChevronRight,
+  CheckCircle2,
+  AlertCircle,
+  RefreshCcw,
+  Layers,
+  Calendar,
+  Zap,
+  Clock,
+  Sparkles,
+  AlertTriangle,
+  GraduationCap
+} from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { generateQuizQuestions, shuffleAndScoreQuiz, QuizQuestion } from '../modules/studyEngine';
 import { getPageContent, hashString } from '../utils/deterministicVariationEngine';
 import AdSlot from '../components/AdSlot';
-import studyData from '../data/studyTopics.json';
-
+import { studyDataService, CanonicalTopic } from '../services/studyDataService';
+import TopicNotFound from '../components/TopicNotFound';
 
 const Quiz = () => {
   const { subject } = useParams();
+  const navigate = useNavigate();
   const { addQuizResult, incrementStreak } = useStore();
-  const [questions, setQuestions] = useState<QuizQuestion[]>([]);
+
+  // Resolve topic through centralized data access layer
+  const resolution = useMemo(() => {
+    return studyDataService.resolveTopic(subject || 'biology-cell-biology');
+  }, [subject]);
+
+  const topicData: CanonicalTopic | null = resolution.topic;
+
+  // In-client self-healing redirect: replace legacy URL with canonical URL
+  useEffect(() => {
+    if (resolution.isLegacyRedirect && resolution.canonicalSlug && resolution.canonicalSlug !== subject) {
+      navigate(`/quiz/${resolution.canonicalSlug}`, { replace: true });
+    }
+  }, [resolution, subject, navigate]);
+
+  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
+  const slug = topicData ? topicData.slug : (subject || '');
+  const formattedSubject = topicData ? topicData.subTopic : 'Biology';
+  const educationLevels = topicData ? topicData.educationLevels : ['High School'];
+  const activeLevel = selectedLevel || educationLevels[0] || 'High School';
+
+  // Deterministic initial questions: guarantees rich HTML on initial render & SSR
+  const initialQuestions = useMemo(() => {
+    if (!topicData) return [];
+    return generateQuizQuestions(topicData, 10, false);
+  }, [topicData]);
+
+  const [questions, setQuestions] = useState<QuizQuestion[]>(initialQuestions);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [isFinished, setIsFinished] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [scoreResult, setScoreResult] = useState<any>(null);
-
-  const slug = subject || 'biology-cell-biology';
-  const topicData = useMemo(() => (studyData as any[]).find(t => t.slug === slug) || (studyData as any[])[0], [slug]);
-  const formattedSubject = topicData.subTopic || 'Biology';
-  const level = topicData.level || 'High School';
-
-  const pageContent = useMemo(() => {
-    const seed = topicData.variationSeed || hashString(slug);
-    return getPageContent(formattedSubject, level, seed);
-  }, [formattedSubject, level, topicData.variationSeed, slug]);
-
   const [showReview, setShowReview] = useState(false);
 
+  const pageContent = useMemo(() => {
+    const seed = hashString(slug);
+    return getPageContent(formattedSubject, activeLevel, seed);
+  }, [formattedSubject, activeLevel, slug]);
+
   useEffect(() => {
+    if (!topicData) return;
     incrementStreak();
-    const quizQuestions = generateQuizQuestions(topicData, 10);
-    setQuestions(quizQuestions);
+    if (questions.length === 0) {
+      const quizQuestions = generateQuizQuestions(topicData, 10, false);
+      setQuestions(quizQuestions);
+    }
   }, [slug, topicData]);
 
   const handleOptionSelect = (option: string) => {
@@ -42,7 +80,7 @@ const Quiz = () => {
   };
 
   const handleNext = () => {
-    if (!selectedOption) return;
+    if (!selectedOption || questions.length === 0) return;
 
     const currentQuestion = questions[currentIndex];
     const newAnswers = { ...userAnswers, [currentQuestion.id]: selectedOption };
@@ -65,23 +103,47 @@ const Quiz = () => {
   };
 
   const restartQuiz = () => {
+    if (!topicData) return;
     setCurrentIndex(0);
     setUserAnswers({});
     setIsFinished(false);
     setSelectedOption(null);
     setScoreResult(null);
     setShowReview(false);
-    setQuestions(generateQuizQuestions(topicData, 10));
+    setQuestions(generateQuizQuestions(topicData, 10, true));
   };
 
-  if (questions.length === 0) return <div className="p-20 text-center">Loading quiz...</div>;
+  // SOFT-404 ELIMINATION: Explicit Not-Found UI for invalid/missing slugs
+  if (!topicData) {
+    return <TopicNotFound slug={subject} tool="quiz" />;
+  }
+
+  const effectiveQuestions = questions.length > 0 ? questions : generateQuizQuestions(topicData, 10, false);
+  const currentQuestion = effectiveQuestions[currentIndex] || effectiveQuestions[0];
+  const isVerified = topicData.contentQuality.status === 'verified';
+  const isNeedsReview = topicData.contentQuality.status === 'needs_review';
 
   return (
     <div className="max-w-4xl mx-auto py-8 space-y-12">
       <Helmet>
-        <title>{formattedSubject} Quiz - {level} Practice Questions</title>
-        <meta name="description" content={topicData.description || `Practice ${formattedSubject} with these ${level} quiz questions. Instant feedback and detailed explanations included.`} />
-        <link rel="canonical" href={`https://study.freetoolshubs.com/quiz/${subject}`} />
+        <title>{`${formattedSubject} Practice Quiz — ${activeLevel} Questions | StudyToolsHub`}</title>
+        <meta
+          name="description"
+          content={topicData.description || `Practice ${formattedSubject} with these ${activeLevel} quiz questions. Instant feedback and detailed explanations included.`}
+        />
+        {/* Primary Canonical Policy: Consolidate link equity to primary educational topic page */}
+        <link rel="canonical" href={`https://study.freetoolshubs.com/${topicData.slug}`} />
+
+        {/* Interactive Tool Directive: All quiz routes carry noindex, follow to prevent cannibalization */}
+        <meta name="robots" content="noindex, follow" />
+
+        {/* Open Graph / Social Media */}
+        <meta property="og:title" content={`${formattedSubject} Practice Quiz — ${activeLevel}`} />
+        <meta property="og:description" content={topicData.description || `Practice ${formattedSubject} with instant quiz questions.`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://study.freetoolshubs.com/quiz/${topicData.slug}`} />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-quiz.png" />
+        <meta name="twitter:card" content="summary_large_image" />
 
         {/* Structured Data (JSON-LD) */}
         <script type="application/ld+json">
@@ -90,8 +152,8 @@ const Quiz = () => {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://study.freetoolshubs.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Quizzes", "item": "https://study.freetoolshubs.com/quiz/biology-cell-biology" },
-              { "@type": "ListItem", "position": 3, "name": formattedSubject, "item": `https://study.freetoolshubs.com/quiz/${subject}` }
+              { "@type": "ListItem", "position": 2, "name": topicData.subject, "item": `https://study.freetoolshubs.com/${studyDataService.getSubjectLandingTopic(topicData.subject)?.slug || topicData.slug}` },
+              { "@type": "ListItem", "position": 3, "name": formattedSubject, "item": `https://study.freetoolshubs.com/${topicData.slug}` }
             ]
           })}
         </script>
@@ -105,7 +167,7 @@ const Quiz = () => {
                 "name": `How many questions are in the ${formattedSubject} quiz?`,
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": `This practice test contains ${questions.length} randomized questions covering core ${formattedSubject} topics for ${level} students.`
+                  "text": `This practice test contains ${effectiveQuestions.length} questions covering core ${formattedSubject} topics for ${activeLevel} students.`
                 }
               },
               {
@@ -113,7 +175,7 @@ const Quiz = () => {
                 "name": "Are there explanations for the answers?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, every question in our quiz maker includes a detailed explanation to help you learn while you practice."
+                  "text": "Yes, every question in our quiz includes an explanation to reinforce conceptual mastery."
                 }
               }
             ]
@@ -121,6 +183,23 @@ const Quiz = () => {
         </script>
       </Helmet>
 
+      {/* Quality Status Banner */}
+      {isVerified ? (
+        <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl text-emerald-800 dark:text-emerald-300 text-xs font-medium">
+          <Sparkles className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          <span>Verified Academic Curriculum — Pedagogically validated questions with authoritative explanations.</span>
+        </div>
+      ) : isNeedsReview ? (
+        <div className="flex items-center gap-2 px-4 py-2 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 rounded-xl text-amber-800 dark:text-amber-300 text-xs font-medium">
+          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
+          <span>Curated Questions undergoing specialist syllabus review.</span>
+        </div>
+      ) : (
+        <div className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-600 dark:text-slate-300 text-xs font-medium">
+          <GraduationCap className="w-4 h-4 text-slate-500 flex-shrink-0" />
+          <span>Foundational Practice Questions. Evaluates core concepts in {topicData.subject}.</span>
+        </div>
+      )}
 
       {isFinished ? (
         <div className="max-w-xl mx-auto py-12 text-center space-y-8 animate-fade-in">
@@ -189,7 +268,7 @@ const Quiz = () => {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-emerald-600 font-semibold">
                 <HelpCircle className="w-5 h-5" />
-                <span>Interactive Quiz • {level}</span>
+                <span>Interactive Quiz • {topicData.subject}</span>
               </div>
               <div className="flex gap-2">
                 <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${topicData.difficulty === 'Advanced' ? 'bg-red-100 text-red-600' :
@@ -210,6 +289,30 @@ const Quiz = () => {
                 {topicData.description || pageContent.intro}
               </p>
             </div>
+
+            {/* Compatible Education Levels */}
+            {educationLevels.length > 0 && (
+              <div className="space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  Target Education Level:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {educationLevels.map(lvl => (
+                    <button
+                      key={lvl}
+                      onClick={() => setSelectedLevel(lvl)}
+                      className={`px-3 py-1 rounded-full text-xs font-semibold transition-colors ${
+                        activeLevel === lvl
+                          ? 'bg-emerald-600 text-white shadow-sm'
+                          : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
+                      }`}
+                    >
+                      {lvl}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-2 pt-2">
               {(topicData.tags || []).map((tag: string) => (
@@ -243,7 +346,6 @@ const Quiz = () => {
                         : 'border-border hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-slate-800/50'
                       }`}
                   >
-
                     <span>{option}</span>
                     <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${selectedOption === option ? 'border-primary bg-primary' : 'border-slate-300'
                       }`}>
@@ -256,7 +358,7 @@ const Quiz = () => {
 
             <div className="mt-12 pt-8 flex justify-between items-center border-t border-border">
               <div className="flex items-center gap-2 text-slate-400 text-sm">
-                <AlertCircle className="w-4 h-4" /> Final answer select
+                <AlertCircle className="w-4 h-4" /> Choose best answer
               </div>
               <button
                 onClick={handleNext}
@@ -282,21 +384,24 @@ const Quiz = () => {
           </div>
           <div className="space-y-2">
             <h4 className="font-bold text-slate-800 dark:text-slate-200">Can I retake the test?</h4>
-            <p className="text-slate-500 text-sm">Yes, you can retake the quiz as many times as you like. We randomize the question order to ensure you're learning, not just memorizing.</p>
+            <p className="text-slate-500 text-sm">Yes, you can retake the quiz as many times as you like. Shuffle question order to ensure you're learning, not just memorizing.</p>
           </div>
           <div className="space-y-2">
-            <h4 className="font-bold text-slate-800 dark:text-slate-200">Is this for {level}?</h4>
-            <p className="text-slate-500 text-sm">Exactly. This set is specifically tuned for {level} curriculum standards and exam requirements.</p>
+            <h4 className="font-bold text-slate-800 dark:text-slate-200">Is this for {activeLevel}?</h4>
+            <p className="text-slate-500 text-sm">Exactly. This set is tuned for {activeLevel} curriculum standards and exam requirements.</p>
           </div>
           <div className="space-y-2">
             <h4 className="font-bold text-slate-800 dark:text-slate-200">Are these real exam questions?</h4>
-            <p className="text-slate-500 text-sm">While these are practice questions, they are modeled after standard {formattedSubject} assessments to provide a realistic experience.</p>
+            <p className="text-slate-500 text-sm">
+              {isVerified
+                ? `Yes, questions have been authored and verified against standard ${formattedSubject} assessment frameworks.`
+                : `While these are practice questions, they are modeled after standard ${formattedSubject} assessments to provide a realistic experience.`}
+            </p>
           </div>
         </div>
       </section>
     </div>
   );
 };
-
 
 export default Quiz;

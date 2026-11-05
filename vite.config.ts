@@ -8,7 +8,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          if (id.includes('studyTopics.json')) {
+          if (id.includes('canonicalStudyTopics.json') || id.includes('legacySlugRedirectMap.json')) {
             return 'study-data';
           }
           if (id.includes('node_modules')) {

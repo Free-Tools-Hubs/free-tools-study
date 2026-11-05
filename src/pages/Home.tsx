@@ -1,8 +1,9 @@
 import { ArrowRight, Zap, Target, BookMarked, Share2, History, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useStore } from '../store/useStore';
 import AdSlot from '../components/AdSlot';
-import studyData from '../data/studyTopics.json';
+import { studyDataService } from '../services/studyDataService';
 
 const Home = () => {
   const { streak, decks, quizHistory } = useStore();
@@ -10,6 +11,31 @@ const Home = () => {
 
   return (
     <div className="space-y-24 py-12">
+      <Helmet>
+        <title>StudyToolsHub — Free Flashcards, Quizzes & Study Planners</title>
+        <meta
+          name="description"
+          content="Master your curriculum with instant flashcards, practice quizzes, and smart study timetables. 100% free, offline-ready, zero sign-up."
+        />
+        <link rel="canonical" href="https://study.freetoolshubs.com/" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="StudyToolsHub — Free Flashcards, Quizzes & Study Planners" />
+        <meta property="og:description" content="Instant flashcards, adaptive quizzes, and smart study planners for students." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://study.freetoolshubs.com/" />
+        <meta property="og:image" content="https://study.freetoolshubs.com/og-main.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "StudyToolsHub",
+            "url": "https://study.freetoolshubs.com/",
+            "description": "Instant flashcards, adaptive quizzes, and smart study planners for students.",
+            "inLanguage": "en"
+          })}
+        </script>
+      </Helmet>
       {hasHistory && (
         <section className="bg-primary/5 border border-primary/20 rounded-3xl p-8 mb-[-4rem] animate-fade-in">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -119,9 +145,8 @@ const Home = () => {
         <h2 className="text-3xl font-bold">Browse Popular Categories</h2>
         <div className="flex flex-wrap gap-3 justify-center">
           {['Biology', 'Chemistry', 'Physics', 'History', 'Psychology', 'Literature', 'Math', 'Economics', 'Computer Science'].map(cat => {
-            // Find the first topic matching this subject in our database
-            const match = (studyData as any[]).find(t => t.subject.toLowerCase() === cat.toLowerCase());
-            const targetSlug = match ? match.slug : 'biology-cell-biology';
+            const landingTopic = studyDataService.getSubjectLandingTopic(cat);
+            const targetSlug = landingTopic ? landingTopic.slug : 'biology-cell-biology';
 
             return (
               <Link

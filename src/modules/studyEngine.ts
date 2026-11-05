@@ -27,32 +27,58 @@ export interface StudySlot {
 }
 
 /**
- * Generates flashcards based on topic from the JSON data
+ * Generates flashcards based on topic from canonical or legacy data.
+ * Returns deterministic slice by default, with optional shuffle.
  */
-export const generateFlashcards = (topicData: any, count: number): Flashcard[] => {
-  if (!topicData || !topicData.baseFlashcards) return [];
-  
-  // In Phase 2, we shuffle and pick 'count' cards
-  const shuffled = [...topicData.baseFlashcards].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count).map(card => ({
+export const generateFlashcards = (
+  topicData: { flashcards?: Flashcard[]; baseFlashcards?: Flashcard[] } | null | undefined,
+  count?: number,
+  shuffle: boolean = false
+): Flashcard[] => {
+  if (!topicData) return [];
+  const rawCards = topicData.flashcards ?? topicData.baseFlashcards;
+  if (!Array.isArray(rawCards) || rawCards.length === 0) return [];
+
+  const cards = shuffle
+    ? [...rawCards].sort(() => Math.random() - 0.5)
+    : [...rawCards];
+
+  const targetCount = typeof count === 'number' && count > 0 ? count : cards.length;
+
+  return cards.slice(0, targetCount).map(card => ({
     ...card,
-    confidence: 0,
-    nextReview: Date.now()
+    confidence: card.confidence ?? 0,
+    nextReview: card.nextReview ?? Date.now()
   }));
 };
 
 /**
- * Generates quiz questions based on topic from JSON data
+ * Generates quiz questions based on topic from canonical or legacy data.
+ * Returns deterministic slice by default, with optional shuffle.
  */
-export const generateQuizQuestions = (topicData: any, count: number): QuizQuestion[] => {
-  if (!topicData || !topicData.baseQuestions) return [];
-  
-  const shuffled = [...topicData.baseQuestions].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+export const generateQuizQuestions = (
+  topicData: { quizQuestions?: QuizQuestion[]; baseQuestions?: QuizQuestion[] } | null | undefined,
+  count?: number,
+  shuffle: boolean = false
+): QuizQuestion[] => {
+  if (!topicData) return [];
+  const rawQuestions = topicData.quizQuestions ?? topicData.baseQuestions;
+  if (!Array.isArray(rawQuestions) || rawQuestions.length === 0) return [];
+
+  const questions = shuffle
+    ? [...rawQuestions].sort(() => Math.random() - 0.5)
+    : [...rawQuestions];
+
+  const targetCount = typeof count === 'number' && count > 0 ? count : questions.length;
+
+  return questions.slice(0, targetCount).map(q => ({
+    ...q,
+    options: [...q.options]
+  }));
 };
 
 /**
- * Shuffles quiz answers and returns a score
+ * Evaluates user answers against correct answers and returns score breakdown
  */
 export const shuffleAndScoreQuiz = (userAnswers: Record<string, string>, questions: QuizQuestion[]) => {
   let score = 0;
@@ -69,7 +95,7 @@ export const shuffleAndScoreQuiz = (userAnswers: Record<string, string>, questio
   return {
     score,
     total: questions.length,
-    percentage: Math.round((score / questions.length) * 100),
+    percentage: questions.length > 0 ? Math.round((score / questions.length) * 100) : 0,
     incorrectIds
   };
 };
@@ -82,9 +108,11 @@ export const createStudyPlan = (subjects: string[], hoursPerDay: number): StudyS
   const times = ['08:00', '10:00', '14:00', '16:00', '19:00'];
   const plan: StudySlot[] = [];
   
+  if (subjects.length === 0) return plan;
+
   let subjectIdx = 0;
   days.forEach(day => {
-    // Basic logic: allocate slots based on hoursPerDay (2 slots = ~4 hours with breaks)
+    // Allocate slots based on hoursPerDay (2 slots = ~4 hours with breaks)
     const slotsToday = Math.min(times.length, Math.ceil(hoursPerDay / 2));
     
     for (let i = 0; i < slotsToday; i++) {

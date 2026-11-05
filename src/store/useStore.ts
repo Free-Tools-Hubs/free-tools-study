@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { storage } from '../utils/storage';
 import { Flashcard, QuizQuestion, StudySlot } from '../modules/studyEngine';
+import { runBrowserProgressMigration } from '../utils/progressMigration';
 
 interface UserState {
   decks: Record<string, Flashcard[]>;
@@ -65,6 +66,9 @@ export const useStore = create<UserState>((set, get) => ({
   },
 
   loadState: () => {
+    // Run idempotent local progress migration before reading stored data
+    runBrowserProgressMigration();
+
     const decks = storage.getLocal<Record<string, Flashcard[]>>('decks') || {};
     const quizHistory = storage.getLocal<any[]>('quizHistory') || [];
     const planner = storage.getLocal<StudySlot[]>('planner') || [];

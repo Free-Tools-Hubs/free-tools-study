@@ -372,7 +372,7 @@ function main() {
         const rel = loc.replace('https://study.freetoolshubs.com/', '');
         if (staticPaths.has(rel)) continue;
         const slugPart = rel.startsWith('quiz/') ? rel.slice(5) : rel;
-        if (!manifestBySlug.has(slugPart)) {
+        if (!manifestBySlug.has(slugPart) && !canonicalBySlug.has(slugPart)) {
           errors.push(`[Check 10: Sitemap Reconciliation] Sitemap URL "${loc}" (slug "${slugPart}") is missing from legacyTopicUrlManifest.json.`);
         }
       }

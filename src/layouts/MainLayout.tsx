@@ -88,7 +88,7 @@ const MainLayout = () => {
               <li><Link to="/biology-cell-biology" className="hover:text-primary transition-colors">Biology</Link></li>
               <li><Link to="/chemistry-organic-chemistry" className="hover:text-primary transition-colors">Chemistry</Link></li>
               <li><Link to="/physics-mechanics" className="hover:text-primary transition-colors">Physics</Link></li>
-              <li><Link to="/psychology-intro" className="hover:text-primary transition-colors">Psychology</Link></li>
+              <li><Link to="/psychology-cognitive-psychology" className="hover:text-primary transition-colors">Psychology</Link></li>
             </ul>
           </div>
           <div>
