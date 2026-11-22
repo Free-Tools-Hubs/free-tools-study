@@ -19,7 +19,8 @@
     "validate:study-content": "node scripts/validateStudyContent.js",
     "validate:cutover": "node scripts/validateConsumerCutover.js",
     "validate:redirects": "node scripts/validateNetlifyRedirects.js",
-    "validate:prerendered-seo": "node scripts/validatePrerenderedSEO.js"
+    "validate:prerendered-seo": "node scripts/validatePrerenderedSEO.js",
+    "validate:release": "node scripts/release/runReleaseValidation.js"
   },
   "keywords": [],
   "author": "",
