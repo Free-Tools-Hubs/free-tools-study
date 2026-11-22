@@ -24,7 +24,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const BASE_URL = 'https://study.freetoolshubs.com';
-const TODAY = new Date().toISOString().split('T')[0];
 
 const canonicalDataPath = path.resolve(__dirname, '../src/data/canonicalStudyTopics.json');
 const canonicalTopics = JSON.parse(fs.readFileSync(canonicalDataPath, 'utf8'));
@@ -48,19 +47,13 @@ export function buildSitemapXml() {
   // 1. Static pages
   for (const page of staticPages) {
     const loc = page === '' ? `${BASE_URL}/` : `${BASE_URL}/${page}`;
-    urls.push({
-      loc,
-      lastmod: TODAY
-    });
+    urls.push({ loc });
   }
 
   // 2. 17 Verified Educational Topics (Sorted deterministically by slug)
   const sortedTopics = [...verifiedTopics].sort((a, b) => a.slug.localeCompare(b.slug));
   for (const topic of sortedTopics) {
-    urls.push({
-      loc: `${BASE_URL}/${topic.slug}`,
-      lastmod: TODAY
-    });
+    urls.push({ loc: `${BASE_URL}/${topic.slug}` });
   }
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -69,7 +62,6 @@ export function buildSitemapXml() {
   for (const entry of urls) {
     xml += `  <url>\n`;
     xml += `    <loc>${entry.loc}</loc>\n`;
-    xml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
     xml += `  </url>\n`;
   }
 
